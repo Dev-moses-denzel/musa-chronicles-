@@ -1,0 +1,41 @@
+{
+    "start": {
+        "text": "While navigating the subterranean archives beneath the central bank, you uncover a hidden room walled with glowing jade brick. In the center floats a crystalline tablet containing the forgotten records of Thoth, the Egyptian God of Wisdom. The text details a method to safely remove the Aurum Worm without sacrificing your life force, but accessing it requires solving an ancient geometric encryption riddle that strains your consciousness.",
+        "name": "Thoth Archive",
+        "bg": "apartment.png",
+        "flash": "#00ffcc",
+        "choices": [
+            { "text": "🧠 Decipher the scroll's ancient codes to permanently increase your defensive shielding metrics", "target": "decipher_scroll" },
+            { "text": "💥 Smash the tablet violently to absorb its raw cosmic energy, ignoring the historical warnings", "target": "brutal_smash_scroll" }
+        ]
+    },
+    "decipher_scroll": {
+        "text": "You focus your mind, letting the gold magic rewrite the code layout before your eyes. The tablet dissolves into a warm amber dust that coats your skin, reinforcing your survival tracking bar significantly. You have unlocked a lost defensive protocol.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": 25, "morality": 10 },
+        "choices": [{ "text": "Return to the main banking sector corridors", "target": "end_of_sidequest" }]
+    },
+    "brutal_smash_scroll": {
+        "text": "You strike the crystalline scroll with a solid gold fist. The archive explodes in a burst of jagged emerald shrapnel. The raw kinetic feedback pieces your armor, but the violent rush of power makes your gold scar burn with malicious authority.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": -10, "morality": -20 },
+        "choices": [{ "text": "Stride out of the ruined archive chamber", "target": "end_of_sidequest" }]
+    },
+    "end_of_sidequest": {
+        "text": "Side-quest logic parameters synchronized with the master timeline data structures. Returning path control to Chapter 16 assets...",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Re-enter Main Story Chapter 16", "target": "next_chapter_16" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
