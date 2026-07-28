@@ -1,48 +1,64 @@
 {
     "start": {
-        "text": "You reach the summit of the ruined World Bank towers. Below you, the armies of human billionaires, Roman legions, Greek gods, and Egyptian pharaohs await your absolute final command. Your morality ranking will decide the fate of history.",
+        "text": "You stand upon the absolute summit of the shattered World Bank towers, looking down through the swirling, ash-heavy red smog at a planet completely torn apart by a global mythological crisis. Below you, the vast urban boulevard has been transformed into an apocalyptic battlefield grid. The remaining mechanized legions of Emperor Nero's Roman Centurions stand locked in a bitter, desperate standoff against the radiant solar batteries of Pharaoh Ramses the Great. Overhead, the sky is violently split in two: corporate drone fleets collide with the screaming tactical fighter craft of the Mount Olympus Syndicate, casting a blinding network of blue electrical fires across the concrete ruins. The ground itself groans from the pressure of millions of marching boots, and the smell of ozone, burning ceramic plating, and melted copper fills the humid air. Your gold scar is throbbing with a terrifying, rhythmic heat that threatens to cook your internal organs from the inside out, sending blinding spikes of pain shooting down your spine with every heartbeat. The parasitic Aurum Worm inside your mind is twisting violently, snapping your neural synapses as it tries to seize absolute ownership of your motor functions to claim the vast hoards of stolen wealth buried deep beneath the city vault lines. Every ally you betrayed, every god you slaughtered, and every sacrifice you made has brought you to this single coordinate. The eyes of every billionaire, civilian, and immortal king are fixed on you, waiting for your final tactical positioning command.",
         "name": "Narrator",
         "bg": "apartment.png",
         "choices": [
-            { "text": "👑 [REQUIRES RUTHLESS ALIGNMENT] Enslave all gods and kings to rule alone", "target": "tyrant_check" },
-            { "text": "🕊️ [REQUIRES HEROIC ALIGNMENT] Sacrifice your scar to banish all magic from the world", "target": "hero_check" }
+            { "text": "👑 [RUTHLESS PATHWAY] Ascend the grand central pulpit and command the pantheons to submit, declaring yourself the eternal tyrant of the planetary matrix", "target": "tyrant_summit_loop" },
+            { "text": "🕊️ [HEROIC PATHWAY] Step onto the precipice of the command balcony and prepare to destroy the Golden Scar, returning power directly to humanity", "target": "hero_summit_loop" },
+            { "text": "🧠 [PSYCHOLOGICAL MONOLOGUE] Hold your head and engage in a grueling, painful mental duel against the parasitic entity inside your frontal lobe", "target": "parasite_duel_loop" },
+            { "text": "🏛️ [PHILOSOPHICAL] Face the wounded, trapped leaders—Zeus, Nero, and Ramses—and force them to confess their historical crimes before the final hour", "target": "pantheon_confrontation_loop" }
         ]
     },
-    "tyrant_check": {
-        "text": "Checking morality ledger variables... If your alignment is RUTHLESS, your ultimate rule is guaranteed.",
+    "tyrant_summit_loop": {
+        "text": "You embrace the absolute depravity of your choices, letting out a hollow, terrifying laugh that echoes over the emergency speaker grids of the entire ruined plaza. You stride up the marble steps of the central pulpit, your boots crunching on broken glass while your eyes burn a deep, poisonous violet color. You link your neural signature directly into the bank's main transmission network, bypassing every firewall using Albus Kojo's stolen codes. You command the remaining automated defense turrets to execute a full, merciless lock on the human billionaires cowering in their bunkers. The system software runs its final tracking calculus, registering your profile as entirely uncorrupted by mercy or hesitation. You look down at the bleeding, defeated faces of Nero and Ramses, realizing their ancient divine power is completely spent. The Aurum Worm purrs in absolute ecstasy inside your mind, providing a massive, narcotic rush of raw vitality that completely maximizes your survival metrics, making you feel completely detached from mortal frailty. You place your hand on the master lever, ready to transmute the globe into your personal wealth museum.",
         "name": "System",
         "bg": "apartment.png",
+        "flash": "#4b0082",
+        "deltaStat": { "survival": 40, "morality": -45 },
         "choices": [
-            { "text": "Unleash the ultimate Sovereign gold wave", "target": "brutal_god_ending" }
+            { "text": "⏩ Unleash the ultimate Sovereign gold wave across the city sectors", "target": "brutal_god_ending_node" }
         ]
     },
-    "hero_check": {
-        "text": "Checking morality ledger variables... If your alignment is HEROIC, your world liberation is guaranteed.",
-        "name": "System",
-        "bg": "apartment.png",
-        "choices": [
-            { "text": "Shatter the scar to save mankind", "target": "mortal_peace_ending" }
-        ]
-    },
-    "brutal_god_ending": {
-        "text": "You choose absolute violence. You channel the entirety of the Golden Scar's power, casting a colossal violet-gold shockwave across the planet. You watch without blinking as Zeus, Nero, Ramses, and every mortal billionaire are turned instantly into frozen gold statues. The world is a quiet, dead museum of precious metal. You sit alone on your throne of solid gold bones as the eternal, terrifying master of the cosmos. [MYTHOLOGICAL TYRANT ENDING]",
+    "hero_summit_loop": {
+        "text": "You refuse to bow to the parasite or the kings. You stumble out onto the rain-slicked command balcony, your chest cavity constricting as your left lung completely crystallizes into brittle, jagged gold bullion lattice-work. Every single breath feels like breathing in liquid fire, and black metallic sludge streams from your ears, dropping your physical stats to a critical, razor-thin margin. Yet, as you look down through the smoke at the thousands of lower-district civilian families huddled inside the industrial concrete bunkers, your warm amber aura flares with an unyielding protective power. You raise a runic blade, matching its vibrational frequency to the central core terminal layout below. The spirits of the fallen kings you met in the abyss glide silently around you, their faces expressions of deep peace as they shield your mind from the maddening, crushing whispers of the worm. You look at your bleeding hands, smile through the agony, and prepare to make the ultimate historical sacrifice for the freedom of mankind.",
         "name": "Musa",
         "bg": "apartment.png",
-        "flash": "#ff0000",
-        "choices": [{ "text": "🔄 Reset the timeline loop", "target": "next_chapter_1" }]
-    },
-    "mortal_peace_ending": {
-        "text": "With a peaceful smile, you plunge a runic blade straight into your gold scar. A brilliant, pure blinding white light engulfs the planet. The magic of the Greek, Roman, and Egyptian pantheons evaporates into nothingness, returning all ancient gods to myths. You live out your days as an ordinary human, but humanity is free to build its own destiny, completely free of corporate debt and divine tyranny. [THE AGE OF MAN ENDING]",
-        "name": "Musa",
-        "bg": "alley.png",
         "flash": "#ffffff",
-        "choices": [{ "text": "🔄 Reset the timeline loop", "target": "next_chapter_1" }]
+        "deltaStat": { "survival": -55, "morality": 50 },
+        "choices": [
+            { "text": "⏩ Plunge the blade straight into your gold scar to seal the age of man", "target": "mortal_peace_ending_node" }
+        ]
     },
-    "defeat": {
-        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
-        "name": "System",
-        "bg": "alley.png",
+    "parasite_duel_loop": {
+        "text": "You fall to your knees on the hard concrete roof, clawing at your face as your gold scar splits open wider than ever before, spraying gold dust into the wind. The Aurum Worm screams inside your skull, projecting terrifying, visceral hallucinations of your dead mentor Albus Kojo, the weeping faces of your victims, and an infinite void of cold, silent gold lead that threatens to suffocate your consciousness. 'Submit to me!' the entity commands, its voice a grinding, metallic roar that fractures your neural pathways and makes your vision turn black. You use your absolute, unyielding human free will to squeeze your temples, forcing your mind to fight the parasitic possession line by line, rewriting the code of your own brain. The agonizing mental friction reduces your survival health pool by half, but you successfully lock the entity inside a psychological containment loop, forcing it into temporary submission. You stand up in the pouring red rain, your eyes clear, fully prepared to decide the ultimate fate of the global conflict on your own independent terms.",
+        "name": "The Aurum Worm",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": -35, "morality": 15 },
+        "choices": [
+            { "text": "👑 Turn back to the central pulpit to claim absolute universal control", "target": "tyrant_summit_loop" },
+            { "text": "🕊️ Turn back to the balcony to dismantle the tracking net forever", "target": "hero_summit_loop" }
+        ]
+    },
+    "pantheon_confrontation_loop": {
+        "text": "You walk slowly toward the glass-shattered corner of the rooftop lounge where the leaders of the old world sit broken and bleeding. Zeus clutches his ruptured lightning gauntlet, his divine eyes flickering with fear. Emperor Nero drags his shattered mechanical legs across the carpet, spitting oil and synthetic blood. Pharaoh Ramses leans heavily against his cracked solar scepter, his ancient face pale. 'Why do you fight us?' Nero wheezes, his voice synthesizer glitching. 'We built the tracking matrix to keep the mortal world safe from economic chaos!' You stand before them like an executioner, your gold scar bathing the room in an ominous amber glow. You force them to sit in their own ruin, detailing how their greed enslaved the lower districts for generations, stripping them of their history and resources just to fund their immortal sky kingdoms. The weight of your words silences them completely as they realize their era of unchallenged tyranny has come to a permanent end.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "👑 Complete your transformation into a tyrant by using their codes to unlock the central pulpit", "target": "tyrant_summit_loop" },
+            { "text": "🕊️ Leave them in the dust and step onto the balcony to execute the human liberation sequence", "target": "hero_summit_loop" }
+        ]
+    },
+    "brutal_god_ending_node": {
+        "text": "You choose absolute violence. You channel the entirety of the Golden Scar's power, casting a colossal violet-gold shockwave across the planet. You watch without blinking as Zeus, Nero, Ramses, and every mortal billionaire are turned instantly into frozen gold statues. The world is a quiet, dead museum of precious metal. You sit alone on your throne of solid gold bones as the eternal, terrifying master of the cosmos. But the timeline doesn't end here; a strange new thunderous roar echoes from the northern clouds as the Norse pantheon registers your catastrophic surge.",
+        "name": "The Golden Sovereign",
+        "bg": "apartment.png",
         "flash": "#ff0000",
-        "choices": []
-    }
-}
+        "choices": [{ "text": "⏩ Advance past the ruined summit into the divine storm", "target": "next_chapter_9" }]
+    },
+    "mortal_peace_ending_node": {
+        "text": "With a peaceful smile, you plunge a runic blade straight into your gold scar. A brilliant, pure blinding white light engulfs the planet. The magic of the Greek, Roman, and Egyptian pantheons evaporates into nothingness, returning all ancient gods to myths. You live out your days as an ordinary human, but humanity is free to build its own destiny, completely free of corporate debt and divine tyranny. Yet, as the old tracking matrix shatters, a cosmic anomaly opens a gateway to an even colder realm—the ancient Norse vanguard is descending to reclaim the power vacuum.",
+        "name": "Musa",
+        "bg": "alley.png",
+        
