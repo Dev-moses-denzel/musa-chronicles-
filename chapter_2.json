@@ -1,0 +1,16 @@
+{
+    "start": {
+        "text": "The city sirens begin to wail across the high-rise grid. The Ministry knows an unsanctioned gold Lord is active. Red drone sensors sweep the brick walls above you as Chapter 2 unfolds...",
+        "name": "Suit AI",
+        "bg": "alley.png", 
+        "choices": [
+            { "text": "🕵️‍♂️ Slip into the neon underground subway system", "target": "subway_branch" }
+        ]
+    },
+    "subway_branch": {
+        "text": "You drop down the shaking metallic steps. The train platform is dark, but ancient magical wards hum beneath the third rail. Suddenly, your closest friend and mentor, Albus Kojo, appears near the shadows.",
+        "name": "Narrator",
+        "bg": "alley.png", 
+        "choices": [{ "text": "Approach Albus for help escaping the grid", "target": "next_chapter_3" }]
+    }
+}
