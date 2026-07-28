@@ -1,0 +1,32 @@
+{
+    "start": {
+        "text": "The cosmic eye blinks. The universe awaits your absolute absolute final decision. The parasite inside your head demands your flesh, while the ghosts of your slaughtered allies look on from the void.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "👑 [REQUIRES UTTER DEPRAVITY] Fully fuse with the Aurum Worm, shattering the earth into a dead gold rock", "target": "cosmic_horror_ending" },
+            { "text": "🕊️ [REQUIRES ABSOLUTE MARTYRDOM] Force the parasite to consume itself, erasing your own name from history entirely", "target": "oblivion_ending" }
+        ]
+    },
+    "cosmic_horror_ending": {
+        "text": "You let the parasite win completely. Your physical human body tears apart as a colossal, miles-long cosmic serpent of liquid gold bursts from your spine. The Earth collapses in on itself, compressed into a silent, dead sphere of solid, cold gold floating in the dark, empty cosmos. You are no longer human—you are an immortal, mindless cosmic entity of pure greed, ruling over a silent graveyard forever. [THE HORRIFIC COSMIC SOVEREIGN ENDING]",
+        "name": "The Void Entity",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "choices": [{ "text": "🔄 Restart the nightmare cycle loop", "target": "next_chapter_1" }]
+    },
+    "oblivion_ending": {
+        "text": "With your remaining human strength, you turn your magic inward, forcing the parasite to feed on its own core. Your body, your memories, and every record of your existence are completely wiped from the timeline. The world resets to an ordinary, peaceful age where magic never existed. Nobody remembers your sacrifice, and you die completely alone in the void, but humanity is safe. [THE OBLIVION MARTYR ENDING]",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "🔄 Restart the nightmare cycle loop", "target": "next_chapter_1" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
