@@ -143,13 +143,13 @@ const narrativeMatrix = {
     }
 };
 
+// UI Core Engine Functions
 function startGameFromMenu() {
     const startScreen = document.getElementById("main-menu-screen");
     if (startScreen) {
         startScreen.style.opacity = "0";
         setTimeout(() => { startScreen.style.display = "none"; }, 500);
     }
-    // Safe haptic fallback system invocation context check
     if ("vibrate" in navigator) { navigator.vibrate(100); }
     drawScreen("act1_start");
 }
@@ -168,51 +168,50 @@ function executeSaveGame() {
 }
 
 function executeLoadGame() {
-    const saved = localStorage.getItem("musa_chronicles_save");
-    if (saved) {
-        tracker = JSON.parse(saved);
+    const savedData = localStorage.getItem("musa_chronicles_save");
+    if (savedData) {
+        tracker = JSON.parse(savedData);
+        alert("SAVE FILE RECOVERED");
         const startScreen = document.getElementById("main-menu-screen");
-        if(startScreen) startScreen.style.display = "none";
+        if (startScreen) startScreen.style.display = "none";
         drawScreen(tracker.activeNode);
         const overlay = document.getElementById("save-menu-overlay");
-        if(overlay) overlay.style.display = "none";
+        if (overlay) overlay.style.display = "none";
     } else {
-        alert("NO LOG DATA LOCATED");
+        alert("NO RECORD FOUND");
     }
 }
 
-function performFlashTransition(color) {
-    const overlay = document.getElementById("flash-overlay");
-    if (!overlay) return;
-    overlay.style.backgroundColor = color;
-    overlay.style.opacity = "0.8";
-    setTimeout(() => {
-        overlay.style.transition = "opacity 0.5s ease-in-out";
-        overlay.style.opacity = "0";
-        setTimeout(() => { overlay.style.transition = "opacity 0.1s ease-out"; }, 500);
-    }, 100);
-}
-
-function triggerVibration(pattern) {
-    if ("vibrate" in navigator && pattern) { 
-        navigator.vibrate(pattern); 
-    }
+function restartCycle() {
+    tracker = { survival: 100, morality: 0, activeNode: "act1_start" };
+    const overlay = document.getElementById("save-menu-overlay");
+    if (overlay) overlay.style.display = "none";
+    const startScreen = document.getElementById("main-menu-screen");
+    if (startScreen) startScreen.style.display = "flex";
+    startGameFromMenu();
 }
 
 function drawScreen(nodeKey) {
-    const data = narrativeMatrix[nodeKey];
-    if (!data) return;
-
     tracker.activeNode = nodeKey;
+    const node = narrativeMatrix[nodeKey];
+    if (!node) return;
 
-    if (data.flash) performFlashTransition(data.flash);
-    if (data.vibrate) triggerVibration(data.vibrate);
-
-    if (data.deltaStat) {
-        if (data.deltaStat.survival) tracker.survival += data.deltaStat.survival;
-        if (data.deltaStat.morality) tracker.morality += data.deltaStat.morality;
-        
+    if (node.deltaStat) {
+        if (node.deltaStat.survival !== undefined) tracker.survival += node.deltaStat.survival;
+        if (node.deltaStat.morality !== undefined) tracker.morality += node.deltaStat.morality;
         tracker.survival = Math.max(0, Math.min(100, tracker.survival));
-        document.getElementById("stat-survival").innerText = tracker.survival;
+    }
 
-        let alignmentText = "NEUTRAL";if (tracker.morality > 5) alignmentText = "HERO";if (tracker.morality < -5) alignmentText = "RUTHLESS VILLAIN";const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = alignmentText;alignTag.style.color = tracker.morality >= 0 ? "#00ffcc" : "#ff3333";}delete data.deltaStat;}if (tracker.survival <= 0 && nodeKey !== "defeat") {drawScreen("defeat");return;}const viewport = document.getElementById("game-viewport");if (viewport) viewport.style.backgroundImage = url('${data.bg}');document.getElementById("name-plate").innerText = data.name;document.getElementById("story-text").innerText = data.text;const choicesBox = document.getElementById("choice-deck");const indicator = document.getElementById("advance-indicator");if (!choicesBox || !indicator) return;choicesBox.innerHTML = "";if (data.choices && data.choices.length > 0) {indicator.style.display = "none";data.choices.forEach(opt => {const card = document.createElement("div");card.className = "action-card";card.innerText = opt.text;card.onclick = (e) => { e.stopPropagation(); drawScreen(opt.target); };choicesBox.appendChild(card);});} else {indicator.style.display = "block";indicator.innerText = "End of Node - Open Menu To Reset";}}function triggerNext() {const current = narrativeMatrix[tracker.activeNode];if (current && current.choices && current.choices.length === 1) {drawScreen(current.choices.target);}}function restartCycle() {tracker.survival = 100;tracker.morality = 0;document.getElementById("stat-survival").innerText = tracker.survival;const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = "NEUTRAL";alignTag.style.color = "#00ffcc";}const overlay = document.getElementById("save-menu-overlay");if (overlay) overlay.style.display = "none";const startScreen = document.getElementById("main-menu-screen");if(startScreen) {startScreen.style.display = "flex";startScreen.style.opacity = "1";}drawScreen("act1_start");}
+    document.getElementById("stat-survival").innerText = tracker.survival;
+    
+    let pathText = "NEUTRAL";
+    if (tracker.morality >= 15) pathText = "HEROIC";
+    if (tracker.morality <= -15) pathText = "RUTHLESS";
+    document.getElementById("stat-alignment").innerText = pathText;
+
+    if (tracker.survival <= 0 && nodeKey !== "defeat") {
+        drawScreen("defeat");
+        return;
+    }
+
+        
