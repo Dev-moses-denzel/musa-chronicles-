@@ -1,0 +1,95 @@
+{
+    "start": {
+        "text": "The sirens of the surface world are no longer wailing—they are melting. As you step out of the bank's fractured subterranean chambers, you find the city grid trapped in an apocalyptic cataclysm. The global financial network disruption has warped reality itself. The sky has torn open into a swirling vortex of pixelated static and ancient runic symbols, casting an eerie, shifting glow across the asphalt. Buildings are warping between concrete high-rises and ancient marble temples as the timelines of the defeated gods collapse into each other. The physical strain on your body has reached an absolute breaking point. Your gold scar is bleeding a heavy, glowing fluid that sizzles whenever a drop hits the cold rain. You must quickly determine your next tactical position before the ambient magic storm completely vaporizes your remaining vital tracking data.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#050508",
+        "choices": [
+            { "text": "👁️ [DARK PATHWAY] Look upon the ruined streets and order the Aurum Worm to feast on the fleeing remnants of the military forces", "target": "dark_path_start" },
+            { "text": "🛡️ [LIGHT PATHWAY] Use your remaining physical life force to project a massive protective barrier over a crumbling refugee sanctuary", "target": "light_path_start" }
+        ]
+    },
+    "dark_path_start": {
+        "text": "You embrace the absolute depravity of your choices. Your eyes burn a deep, poisonous violet as you extend your single remaining arm toward the retreating armored legions of the Roman Centurions. 'Musa, have mercy!' their commander screams through his radio, but mercy died in the vaults. You command the parasite inside your skull to expand. Thousands of microscopic golden tendrils explode from your open pores, burrowing into the concrete and tracking the heat signatures of every soldier within three blocks. Within seconds, their screams echo through the crimson fog. Their blood boils instantly, transmuting their entire biological makeup into brittle, razor-sharp shards of gold bullion that burst outward through their armor plating. The parasite purrs inside your brain, absorbing their lifeforce to completely stabilize your survival pool, but your mind slips deeper into an irreversible, cold-blooded madness.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": 40, "morality": -50 },
+        "choices": [
+            { "text": "March toward the ruined high-rise tower to claim your planetary throne", "target": "dark_citadel_approach" },
+            { "text": "Execute the cowering civilian elites who financed the old Ministry", "target": "execute_hostages" }
+        ]
+    },
+    "light_path_start": {
+        "text": "You refuse to let the darkness win. Through the smoke, you see a crumbling cathedral where hundreds of families, human rebels, and lower-district citizens are trapped beneath a buckling concrete support pillar. The falling debris is laced with rogue Greek lightning current. Your left lung is completely calcified into dead gold, and every breath feels like swallowing broken glass, but you stumble forward anyway. You plunge your bare, bleeding right hand directly into the exposed high-voltage cables of the street grid, channeling your own life signature to reinforce the structural field. A shimmering amber kinetic shield erupts over the cathedral, absorbing the debris and deflecting the rogue energy waves. The citizens look out through the glowing barrier, weeping and cheering your name, but the pure somatic feedback burns your flesh away, dropping your physical health bar to a razor-thin margin.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -55, "morality": 45 },
+        "choices": [
+            { "text": "Drag your mutilated, smoking skeletal frame toward the central bunker to secure the layout", "target": "light_bunker_approach" }
+        ]
+    }
+
+
+      ,
+    "execute_hostages": {
+        "text": "The cowering corporate board members look up at your radiant, terrifying violet-gold aura. They throw their platinum bank cards at your feet, begging for their lives. Your single arm rises, and the Aurum Worm responds with absolute malice. With a microscopic gesture, you command the gold bullion inside their very jewelry, fillings, and watches to liquefy and expand. They choke and scream as the precious metals crawl down their throats, solidifying inside their chests. Their screams are cut short as they are turned into a pristine row of screaming golden trophies. The parasite inside your head laughs with you, filling your veins with a cold, narcotic surge of raw energy. You feel no guilt; you are rewriting the layout of the world order with absolute, ruthless power.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 15, "morality": -35 },
+        "choices": [{ "text": "Stride over their metallic bodies to ascend the high-rise tower", "target": "dark_citadel_approach" }]
+    },
+    "dark_citadel_approach": {
+        "text": "You ascend the stairs of the grand World Bank tower, your boots clicking on the blood-spattered marble. At the top, you find Mansa Musa II standing on the glass command deck, flanked by a defensive network of fully activated anti-matter turrets. 'You became the monster you fought, kid,' he says, his corporate visor tracking your rapid vitals. Your parasite screams for his blood, recognizing that his vast international accounts contain the final financial lock code needed to subjugate the remainder of the world's population under your absolute, terrifying mental tracking web.",
+        "name": "Mansa Musa II",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "choices": [
+            { "text": "⚔️ [BRUTAL COMBAT] Rip through his automated defenses and violently claim his financial codes", "target": "dark_final_showdown" }
+        ]
+    },
+    "light_bunker_approach": {
+        "text": "You stumble inside the underground industrial bunker, your right arm charred to the bone from the high-voltage cables. Inside, Albus Kojo’s daughter, Serena Kojo, catches your collapsing frame. She looks at your open, bleeding gold scar with a mixture of terror and deep reverence. 'Musa, you saved everyone at the cathedral... but the network is searching for your pulse. If it finds you, it will detonate the remaining central bank grids across the global map to purge the survivors. You must let me use my medical tools to excise the parasite, even if the surgical shock stops your heart permanently.'",
+        "name": "Serena Kojo",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "choices": [
+            { "text": "🧠 [TRUST] Allow Serena to perform the agonizing, dangerous surgery to remove the Aurum Worm", "target": "surgery_light_path" },
+            { "text": "🏃‍♂️ [SACRIFICE] Refuse the surgery, sprinting away into the stormy wasteland to draw the grid's atomic target locks completely away from the bunker", "target": "wasteland_dash" }
+        ]
+    }
+      ,
+    "dark_final_showdown": {
+        "text": "You march forward as the anti-matter turrets open fire, vaporizing chunks of your flesh. Guided by the total madness of the Aurum Worm, you stretch out your hand and turn his high-tech defense field into a cloud of razor-sharp gold bullion dust that cuts his armor to shreds. You pin Mansa Musa II to the glass wall and plunge your bare hand into his neural visor, downloading the planetary encryption algorithms directly into your gold scar. The sheer influx of data makes your brain bleed, but the tracking network is completely yours. Mansa Musa II crystallizes into a solid gold corpse, staring out at the burning city.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": -20, "morality": -40 },
+        "choices": [{ "text": "⏩ Claim your absolute global throne in Chapter 17", "target": "next_chapter_17" }]
+    },
+    "surgery_light_path": {
+        "text": "You lay on the rusted metal medical table, refusing any anesthesia to keep your tracking shields active. Serena plunges her laser-scalpel directly into your glowing gold scar. The somatic torment is unspeakable; the Aurum Worm screeches inside your skull, violently fighting back by attempting to calcify your vocal cords and heart valves into brittle gold lead. You vomit dark metallic sludge, your heartbeat slowing to a near-fatal crawl, but with a final heroic gasp, your raw human free will tears the parasitic entity completely out of your flesh. It shrivels into dead ash on the concrete floor. You are normal, frail, and bleeding out, but you are finally free.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -40, "morality": 50 },
+        "choices": [{ "text": "⏩ Crawl toward the terminal grid to witness the new era in Chapter 17", "target": "next_chapter_17" }]
+    },
+    "wasteland_dash": {
+        "text": "‘Keep the bunker sealed!’ you roar, throwing yourself back out into the devastating static storm. The orbital defense satellites lock onto your gold-scar signature instantly, sending down multiple blinding pillars of plasma artillery that blast craters all around your feet. You sprint across the cracked concrete ruins, your boots burning, drawing the atomic target locks entirely into the empty dead-zone wasteland. A direct concussive shockwave blows you through a brick wall, fracturing your spine and reducing your health bar to its absolute minimum limits, but the refugee bunker is completely safe from the orbital purge strike.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -60, "morality": 45 },
+        "choices": [{ "text": "⏩ Collapse in the radioactive ashes and watch the sunrise in Chapter 17", "target": "next_chapter_17" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
