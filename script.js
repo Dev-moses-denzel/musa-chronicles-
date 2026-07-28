@@ -115,6 +115,11 @@ async function drawScreen(nodeKey) {
         setTimeout(() => { flash.style.opacity = "0"; }, 150);
     }
 
+        if (node.vibrate && "vibrate" in navigator) {
+        navigator.vibrate(node.vibrate);
+        }
+            
+
     const choiceDeck = document.getElementById("choice-deck");
     choiceDeck.innerHTML = "";
     node.choices.forEach(choice => {
