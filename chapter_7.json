@@ -1,0 +1,65 @@
+{
+    "start": {
+        "text": "Before negotiations can finish, a massive desert sandstorm swallows the metropolitan sky. The sun burns blood-red as Pharaoh Ramses the Great steps out of the sand, flanked by Anubis—the Jackal-Headed God of Death. 'The Roman and Greek empires squabble over dust. The Egyptian Solar Empire claims the Golden Scar!'",
+        "name": "Anubis",
+        "bg": "alley.png",
+        "flash": "#ffaa00",
+        "choices": [
+            { "text": "💀 Challenge Anubis to a brutal single-combat trial of souls", "target": "soul_trial" },
+            { "text": "☀️ Offer your gold magic to fuel Ramses's global solar grid", "target": "egypt_alliance" }
+        ]
+    },
+    "soul_trial": {
+        "text": "Anubis slams his runic staff down, pulling your spectral life force straight out of your body into a dark void. You must balance your morality score against the feather of truth. The pressure inside your skull is blinding.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#800080",
+        "choices": [
+            { "text": "🗡️ Brutally corrupt the scales using dark gold magic", "target": "corrupt_scales" },
+            { "text": "✨ Trust your heroic deeds to naturally withstand the weight", "target": "hero_scales" }
+        ]
+    },
+    "corrupt_scales": {
+        "text": "You laugh viciously, channeling corrupted violet energy directly into Anubis's scales, shattering them into dust. The god of death stumbles back, coughing up dark ichor. Your life force snaps back into your skin with lethal speed.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "deltaStat": { "survival": 15, "morality": -25 },
+        "choices": [{ "text": "Stride through the sandstorm to face the Pharaoh", "target": "world_war_grid" }]
+    },
+    "hero_scales": {
+        "text": "You close your eyes and let the scale settle. Your selfless protectiveness glows bright amber. Anubis nods respectfully, returning your spirit with a protective permanent shielding charm.",
+        "name": "Anubis",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -10, "morality": 30 },
+        "choices": [{ "text": "Join forces with the desert vanguard", "target": "world_war_grid" }]
+    },
+    "egypt_alliance": {
+        "text": "Ramses smiles, raising his golden scepter. Your gold scar links with the ancient pyramids, casting a massive golden shield over the entire map. The Roman and Greek factions brace for a global mythological collision.",
+        "name": "Ramses the Great",
+        "bg": "alley.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": 5, "morality": 5 },
+        "choices": [{ "text": "Command the frontline solar batteries", "target": "world_war_grid" }]
+    },
+    "world_war_grid": {
+        "text": "The entire planet is now locked in a full-scale mythological crisis. The sky is split between Greek lightning, Roman artillery, and Egyptian solar fire. You must make your final tactical positioning choice.",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance to the ultimate world summit showdown", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Global infrastructure collapse imminent. Narrative nodes tracking final decision points... Loading Chapter 8 destiny logs.",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 8", "target": "next_chapter_8" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
