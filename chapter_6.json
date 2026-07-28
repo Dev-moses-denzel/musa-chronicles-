@@ -1,0 +1,67 @@
+{
+    "start": {
+        "text": "As the smoke from the bank blast clears, the sky splits open with divine lightning. From a localized thunderstorm portal, Hermes—The Herald of the Olympus Syndicate—slides down clad in neon-chrome wings. 'Musa! Your gold magic broke the mortal veil. The ancient pantheons are claiming their debts.'",
+        "name": "Hermes Syndicate",
+        "bg": "alley.png", 
+        "flash": "#00ffff",
+        "choices": [
+            { "text": "⚡ Ally with Greek Zeus to launch a brutal lightning-gold siege on the elite", "target": "greek_alliance" },
+            { "text": "🛡️ Refuse the gods and build an independent human mortar army", "target": "human_resistance" }
+        ]
+    },
+    "greek_alliance": {
+        "text": "You grasp Hermes's hand. A bolt of raw Greek lightning surges through your gold scar, turning the night sky electric blue. You are instantly teleported to a high-tech obsidian War Room alongside Ares, God of War, who is mapping out defensive military strategies.",
+        "name": "Ares",
+        "bg": "apartment.png",
+        "flash": "#0000ff",
+        "deltaStat": { "survival": 10, "morality": -10 },
+        "choices": [{ "text": "March with the Olympian units toward the Roman border", "target": "roman_ambush" }]
+    },
+    "human_resistance": {
+        "text": "‘No master, mortal or divine!’ you roar, casting a wave of gold magic that forces Hermes to retreat into the clouds. Suddenly, Mansa Musa II—the wealthiest corporate titan in the Southern Hemisphere—steps from an armored mech suit. 'I like your style, kid. Let’s fund a mortal rebellion.'",
+        "name": "Mansa Musa II",
+        "bg": "alley.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -20, "morality": 20 },
+        "choices": [{ "text": "Use his billions to fortify the city defenses", "target": "roman_ambush" }]
+    },
+    "roman_ambush": {
+        "text": "The ground shakes violently. Emperor Nero of the Roman Centurion Elite leads a mechanized legion of iron-plated cyber-gladiators through the city gates. Armed with heavy anti-magic ballistas, they declare martial law over the grid.",
+        "name": "Emperor Nero",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "choices": [
+            { "text": "🔥 Melt their entire legions alive into golden monuments using your scar", "target": "brutal_melt" },
+            { "text": "🏛️ Demand a diplomatic parley with the Roman senate", "target": "senate_parley" }
+        ]
+    },
+    "brutal_melt": {
+        "text": "You slam both palms into the concrete. A catastrophic wave of boiling gold magma erupts directly beneath the Roman centurions. Their screams are cut short as Nero’s cyber-armor liquefies, fusing his entire unit into a massive, agonizing golden war monument in the middle of the street.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": -5, "morality": -30 },
+        "choices": [{ "text": "⏩ Advance through the metallic graveyard to the next sector", "target": "end_of_chapter" }]
+    },
+    "senate_parley": {
+        "text": "You raise a gold peace banner. Nero halts his firing squad, smirking coldly. 'You speak well for a fugitive. But diplomacy costs gold.' You transfer half your accumulated wealth metrics to secure a brief ceasefire.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": 20, "morality": 15 },
+        "choices": [{ "text": "Enter the negotiation chambers safely", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "The international war lines have been drawn. Faction alignment metrics stabilizing... Preparing Chapter 7 database structures.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 7", "target": "next_chapter_7" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
