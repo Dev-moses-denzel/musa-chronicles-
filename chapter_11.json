@@ -1,0 +1,32 @@
+{
+    "start": {
+        "text": "You stand on the central command deck. Your cumulative historical path choices have unlocked the final core alignments of the timeline saga. Choose how you will use your free will to conclude the war.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "👑 [REQUIRES HIGH RUTHLESS RANK] Fully claim Nero's stolen empire and enslave both gods and humans", "target": "ruthless_empire_ending" },
+            { "text": "🕊️ [REQUIRES HIGH HEROIC RANK] Disperse all your hoarded gold assets back to the impoverished public", "target": "hero_republic_ending" }
+        ]
+    },
+    "ruthless_empire_ending": {
+        "text": "Embracing your ruthless nature, you swipe the assassination keys and activate every automated defense turret on the global network. You fire upon gods and mortal armies alike, turning the entire planet into your personal gold mining colony. You sit upon the high throne of the cosmos, completely isolated but undeniably supreme. [THE ABSOLUTE GOLDEN EMPEROR ENDING]",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "choices": [{ "text": "🔄 Reset the grand timeline loop", "target": "next_chapter_1" }]
+    },
+    "hero_republic_ending": {
+        "text": "Choosing absolute selflessness, you link your gold scar to the central core bank and detonate your own energy signature. A global shower of pure wealth-current rains down on every city block, permanently erasing inflation, debt, and poverty across the globe. You lose your magic forever, but you are celebrated globally as the immortal Guardian of Humanity. [THE FREE REPUBLIC ENDING]",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "🔄 Reset the grand timeline loop", "target": "next_chapter_1" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
