@@ -15,7 +15,6 @@ const narrativeMatrix = {
         name: "System",
         bg: "apartment.png", 
         flash: "#ffcc00",
-        vibrate:,
         deltaStat: { survival: -15, morality: 10 },
         choices: [{ text: "Head down into the rain-slicked city alleys", target: "act1_alley_entry" }]
     },
@@ -24,7 +23,6 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "apartment.png", 
         flash: "#ff3333",
-        vibrate:,
         deltaStat: { survival: 0, morality: -10 },
         choices: [{ text: "Step out into the smoky back alleys", target: "act1_alley_entry" }]
     },
@@ -42,7 +40,6 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "alley.png", 
         flash: "#ffffff",
-        vibrate:,
         deltaStat: { survival: -20, morality: 15 },
         choices: [{ text: "Stumble forward into the deeper streets", target: "act2_intro" }]
     },
@@ -51,7 +48,6 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "alley.png", 
         flash: "#800080",
-        vibrate:,
         deltaStat: { survival: 5, morality: -20 },
         choices: [{ text: "March forward to claim your kingdom", target: "act2_intro" }]
     },
@@ -75,7 +71,6 @@ const narrativeMatrix = {
         name: "System",
         bg: "apartment.png", 
         flash: "#ff3333",
-        vibrate:,
         deltaStat: { survival: -25 },
         choices: [
             { text: "Cast an acceleration charm to jump the gap", target: "act2_roof_jump" },
@@ -86,7 +81,6 @@ const narrativeMatrix = {
         text: "You sprint and leap across the massive urban gap. You crash through a glass skylight, landing directly inside the old subway tunnels below.",
         name: "Musa",
         bg: "alley.png",
-        vibrate:,
         deltaStat: { survival: -10 },
         choices: [{ text: "Recover and look around the dark train tunnels", target: "act2_subway" }]
     },
@@ -94,7 +88,6 @@ const narrativeMatrix = {
         text: "The iron structural beams turn to solid gold shielding, absorbing the sniper blast perfectly. You slide down the ventilation shaft right onto the underground train platform.",
         name: "Narrator",
         bg: "apartment.png",
-        vibrate:,
         choices: [{ text: "Step onto the quiet concrete platform", target: "act2_subway" }]
     },
     act2_betrayal: {
@@ -102,7 +95,6 @@ const narrativeMatrix = {
         name: "Albus Kojo",
         bg: "alley.png", 
         flash: "#ffcc00",
-        vibrate:,
         choices: [
             { text: "🤝 Try to reason with Albus and surrender peaceful terms", target: "act2_hero_surrender" },
             { text: "🗡️ Unleash a lethal golden curse directly into his chest", target: "act2_villain_kill" }
@@ -112,7 +104,6 @@ const narrativeMatrix = {
         text: "You lower your wand. Albus steps forward and locks the glowing runic cuffs onto your wrists. The heavy binding spells snap into place, stripping your stats significantly.",
         name: "Narrator",
         bg: "alley.png",
-        vibrate:,
         deltaStat: { survival: -30, morality: 25 },
         choices: [{ text: "Enter the transport vehicle toward the Ministry Vaults", target: "act3_intro" }]
     },
@@ -121,7 +112,6 @@ const narrativeMatrix = {
         name: "Musa",
         bg: "alley.png",
         flash: "#ff3333",
-        vibrate:,
         deltaStat: { survival: 0, morality: -30 },
         choices: [{ text: "Use his card to break into the Ministry Vault networks", target: "act3_intro" }]
     },
@@ -138,12 +128,10 @@ const narrativeMatrix = {
         name: "System",
         bg: "alley.png",
         flash: "#ff0000",
-        vibrate:,
         choices: []
     }
 };
 
-// UI Core Engine Functions
 function startGameFromMenu() {
     const startScreen = document.getElementById("main-menu-screen");
     if (startScreen) {
@@ -213,5 +201,41 @@ function drawScreen(nodeKey) {
         drawScreen("defeat");
         return;
     }
+
+    document.getElementById("name-plate").innerText = node.name;
+    document.getElementById("story-text").innerText = node.text;
+    document.getElementById("game-viewport").style.backgroundImage = `url('${node.bg}')`;
+
+    if (node.flash) {
+        const flash = document.getElementById("flash-overlay");
+        flash.style.backgroundColor = node.flash;
+        flash.style.opacity = "0.5";
+        setTimeout(() => { flash.style.opacity = "0"; }, 150);
+    }
+
+    const choiceDeck = document.getElementById("choice-deck");
+    choiceDeck.innerHTML = "";
+    node.choices.forEach(choice => {
+        const btn = document.createElement("div");
+        btn.className = "action-card";
+        btn.innerText = choice.text;
+        btn.addEventListener("click", () => drawScreen(choice.target));
+        choiceDeck.appendChild(btn);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("initiate-btn").addEventListener("click", startGameFromMenu);
+    document.getElementById("load-btn").addEventListener("click", executeLoadGame);
+    document.getElementById("hud-menu-btn").addEventListener("click", toggleSaveMenu);
+    document.getElementById("quick-save-btn").addEventListener("click", executeSaveGame);
+    document.getElementById("quick-load-btn").addEventListener("click", executeLoadGame);
+    document.getElementById("restart-btn").addEventListener("click", restartCycle);
+    document.getElementById("close-menu-btn").addEventListener("click", toggleSaveMenu);
+    
+    document.getElementById("save-menu-overlay").addEventListener("click", (e) => {
+        if (e.target.id === "save-menu-overlay") toggleSaveMenu();
+    });
+});
 
         
