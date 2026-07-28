@@ -15,92 +15,12 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v4
 
-    - name: Set up Java
-      uses: actions/setup-java@v4
+    - name: Package Web App to APK
+      uses: telerik/progress-apk-builder-action@v1
       with:
-        distribution: 'zulu'
-        java-version: '17'
-
-    - name: Initialize Android Project
-      run: |
-        mkdir -p app/src/main/assets/www
-        cp index.html style.css script.js *.png app/src/main/assets/www/ 2>/dev/null || cp index.html style.css script.js app/src/main/assets/www/
-        
-        # Create minimal gradle project files
-        echo "include ':app'" > settings.gradle
-        
-        cat << 'EOF' > build.gradle
-        buildscript {
-            repositories { google() { content { includeGroup "com.android.tools.build" } }; mavenCentral() }
-            dependencies { classpath 'com.android.tools.build:gradle:8.2.2' }
-        }
-        allprojects { repositories { google(); mavenCentral() } }
-        EOF
-        
-        mkdir -p app
-        cat << 'EOF' > app/build.gradle
-        plugins { id 'com.android.application' }
-        android {
-            namespace 'com.mosesdenzel.musachronicles'
-            compileSdk 34
-            defaultConfig {
-                applicationId "com.mosesdenzel.musachronicles"
-                minSdk 24
-                targetSdk 34
-                versionCode 1
-                versionName "1.0"
-            }
-        }
-        EOF
-        
-        mkdir -p app/src/main/res/values
-        echo '<resources><string name="app_name">Musa Chronicles</string></resources>' > app/src/main/res/values/strings.xml
-        
-        mkdir -p app/src/main/java/com/mosesdenzel/musachronicles
-        cat << 'EOF' > app/src/main/java/com/mosesdenzel/musachronicles/MainActivity.java
-        package com.mosesdenzel.musachronicles;
-        import android.os.Bundle;
-        import android.webkit.WebView;
-        import android.webkit.WebViewClient;
-        import android.webkit.WebSettings;
-        import androidx.appcompat.app.AppCompatActivity;
-
-        public class MainActivity extends AppCompatActivity {
-            @Override
-            protected void Bundle) {
-                super.onCreate(savedInstanceState);
-                WebView webView = new WebView(this);
-                WebSettings settings = webView.getSettings();
-                settings.setJavaScriptEnabled(true);
-                settings.setDomStorageEnabled(true);
-                webView.setWebViewClient(new WebViewClient());
-                webView.loadUrl("file:///android_asset/www/index.html");
-                setContentView(webView);
-            }
-        }
-        EOF
-
-        cat << 'EOF' > app/src/main/AndroidManifest.xml
-        <manifest xmlns:android="http://android.com">
-            <uses-permission android:name="android.permission.INTERNET"/>
-            <application android:label="@string/app_name" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-                <activity android:name=".MainActivity" android:exported="true">
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN"/>
-                        <category android:name="android.intent.category.LAUNCHER"/>
-                    </intent-filter>
-                </activity>
-            </application>
-        </manifest>
-        EOF
-
-    - name: Gradle Build
-      run: gradle assembleDebug
-
-    - name: Prepare Output
-      run: |
-        mkdir -p output-apk
-        cp app/build/outputs/apk/debug/app-debug.apk output-apk/MusaChronicles.apk
+        source-dir: '.'
+        app-id: 'com.mosesdenzel.musachronicles'
+        app-name: 'Musa Chronicles'
 
     - name: Create GitHub Release and Upload APK
       uses: softprops/action-gh-release@v2
@@ -109,7 +29,8 @@ jobs:
         name: Release v1.0.${{ github.run_number }}
         draft: false
         prerelease: false
-        files: output-apk/MusaChronicles.apk
+        files: ./**/*.apk
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
         
