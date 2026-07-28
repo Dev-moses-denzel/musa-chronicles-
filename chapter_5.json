@@ -1,27 +1,44 @@
 {
     "start": {
-        "text": "You smash through the front glass lobby doors of the bank. Outside, the night sky is illuminated by blinding red spotlights. A massive legion of heavily armed Ministry Enforcers have blocked off the entire boulevard.",
+        "text": "The heavy glass lobby doors of the Neo-Ministry Bank don't just shatter when you push them open; they dissolve into sharp needles of black glass that rain down onto the slick pavement. Outside, the night sky is gone, replaced by a suffocating dome of blinding red tactical spotlights that cut through the pouring rain. A massive legion of heavily armed Ministry Enforcers—thousands of faceless soldiers encased in thick, sound-dampening ceramic armor—have blocked off the entire three-mile boulevard with armored personnel carriers, high-voltage suppression fences, and automated defense turrets. The air hums with a deafening, localized anti-magic frequency that vibrates straight through your teeth and makes your lungs feel like they are collapsing. Your gold scar is weeping a freezing, luminescent black fluid that is eating away at your skin. The Aurum Worm inside your skull is thrashing in pure panic, screaming for absolute violence to preserve its host. You stand on the precipice of absolute destruction or total planetary tyranny.",
         "name": "Commander",
         "bg": "alley.png",
         "flash": "#ff3333",
         "choices": [
-            { "text": "🏃‍♂️ Surrender yourself to protect innocent bystanders near the street", "target": "hero_ending" },
-            { "text": "🔥 Unleash a brutal, catastrophic gold storm across the army", "target": "brutal_ending" }
+            { "text": "🏃‍♂️ [MARTYRDOM] Voluntarily drop your defenses and surrender to protect the thousands of innocent civilian hostages trapped behind the barricades", "target": "heroic_surrender_loop" },
+            { "text": "🔥 [TOTAL BRUTALITY] Give the parasitic Aurum Worm complete control over your mind, unleashing an unholy, city-wide catastrophe on the legion", "target": "apocalyptic_gold_storm" },
+            { "text": "🧠 [PSYCHOLOGICAL WARFARE] Force the Enforcers' electronic communication channels to broadcast the screaming memories of the gods you defeated", "target": "psychological_broadcast" }
         ]
     },
-    "hero_ending": {
-        "text": "You drop your wand, allowing the heavy stasis collars to bind your neck. As you are dragged away into the dark transport, the public cheers your name. The tracking grid you dismantled frees the lower districts from debt forever. You are an imprisoned icon of freedom. [HEROIC SACRIFICE ENDING]",
+    "heroic_surrender_loop": {
+        "text": "You consciously force the roaring, parasitic hunger of your scar back into your core. The agonizing friction causes thick, black blood to stream down your collarbone as your internal stats drop dangerously low. You step forward into the spotlights with your hands open, kneeling on the wet asphalt. A squad of enforcers rushes forward with heavy, magnetized stasis collars, slamming them around your neck and wrists. The localized anti-magic voltage surges directly through your central nervous system, causing your muscles to lock and tear as your remaining health bar drops to a single percentage point. Yet, through the agonizing static, you look past the armored barricades and see the lower-district citizens watching from the alleyways. Because you chose to endure this torture instead of turning the streets into a warzone, the public realizes the Ministry's financial matrix is broken. The crowds begin to riot against the guards, chanting your name as a symbol of cosmic freedom. You are dragged into an armored transport, half-dead but immortalized as a legend.",
         "name": "System",
         "bg": "alley.png",
         "flash": "#ffffff",
-        "choices": [{ "text": "🔄 Loop back to the beginning of the timeline", "target": "next_chapter_1" }]
+        "deltaStat": { "survival": -65, "morality": 50 },
+        "choices": [
+            { "text": "⏩ Hold onto your remaining consciousness as the transport vehicle speeds into the divine lightning storm", "target": "next_chapter_6" }
+        ]
     },
-    "brutal_ending": {
-        "text": "You unleash total devastation. Your out-of-control gold scar opens completely, casting a massive golden shockwave that rips down the boulevard. You watch without blinking as hundreds of military vehicles, weapons, and enforcers are instantaneously melted down into liquid, burning gold slurry. The concrete streets are painted in shimmering gold blood. Standing amidst the smoking ashes of the old world, you are the undisputed, terrifying Sovereign of Gold. [RUTHLESS TYRANT ENDING]",
+    "apocalyptic_gold_storm": {
+        "text": "You let out a hollow, terrifying scream as your sanity breaks completely. You yield your entire physical free will to the Aurum Worm. Your gold scar ruptures outward, tearing the skin off your face to reveal an iridescent, pulsing violet carapace beneath. A colossal, pressurized shock wave of absolute wealth-magic ripples down the entire boulevard at supersonic speeds. You watch without blinking as thousands of military vehicles, automated turrets, and ceramic-armored enforcers are instantaneously calcified from within. The iron in their blood and the synthetic materials in their armor turn into boiling, molten gold bullion that melts through their flesh. The concrete streets dissolve into a shimmering, agonizing sludge of gold slurry and bone ash. The air is thick with the horrific smell of vaporized ozone and burning flesh. Standing in the center of a three-mile graveyard of weeping, frozen gold statues, you are no longer a human saving his city. You are a terrifying, god-like anomaly of pure cosmic greed.",
         "name": "Musa",
         "bg": "alley.png",
         "flash": "#ff0000",
-        "choices": [{ "text": "🔄 Loop back to the beginning of the timeline", "target": "next_chapter_1" }]
+        "deltaStat": { "survival": 40, "morality": -65 },
+        "choices": [
+            { "text": "⏩ Step off the mountain of melted gold bodies to face the true pantheons descending from the sky", "target": "next_chapter_6" }
+        ]
+    },
+    "psychological_broadcast": {
+        "text": "Instead of launching a physical attack, you plunge your glowing gold fingers directly into a shattered data terminal on the curb, routing your scar's frequency into the military's secure satellite array. The parasite inside your head acts as an amplifier, forcing every tactical headset, tank radio, and public emergency siren in the metropolitan grid to broadcast a raw, unedited psychic looping frequency. The air fills with the screaming, agonizing death rattles of Albus Kojo, the weeping of the fallen vault kings, and the hollow laughter of the underworld. Hundreds of enforcers drop their weapons, clawing at their helmets as their ears bleed from the sheer psychological terror of the broadcast. Dozens of automated drones lose their programming, crashing into the buildings in bursts of flame. You walk through the screaming, paralyzed ranks like a ghost, your vital tracking signs straining under the intense neurological feedback, but your path is completely clear.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": -25, "morality": -10 },
+        "choices": [
+            { "text": "⏩ Advance past the weeping lines of the military blockade as the atmosphere begins to tear open", "target": "next_chapter_6" }
+        ]
     },
     "defeat": {
         "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
