@@ -1,0 +1,67 @@
+{
+    "start": {
+        "text": "The neon city streetlights morph into a sickly, bleeding crimson. Your gold scar splits open wider than ever before, whispering directly inside your skull in an ancient, rasping frequency: 'Feed me blood, or I will consume your flesh from within.' You realize your magic is a living, predatory parasite.",
+        "name": "The Aurum Worm",
+        "bg": "alley.png", 
+        "flash": "#ff3333",
+        "choices": [
+            { "text": "🧠 [PSYCHOLOGICAL] Feed the parasite by executing a trapped group of begging corporate elite hostages", "target": "brutal_sacrifice" },
+            { "text": "🫁 [MUTILATION] Starve the parasite to protect them, letting your lungs slowly calcify into solid gold", "target": "starve_parasite_check" }
+        ]
+    },
+    "brutal_sacrifice": {
+        "text": "You raise your trembling hand, surrendering to the madness. Molten gold erupts from the eyes of the corporate hostages, sealing their mouths shut as they suffocate, transforming into screaming metal statues. The parasite purrs inside your brain, restoring your physical energy while drowning your soul in black horror.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": 30, "morality": -45 },
+        "choices": [{ "text": "Wipe the gold flakes from your bleeding eyes", "target": "hades_descent" }]
+    },
+    "starve_parasite_check": {
+        "text": "‘Never again!’ you scream, shielding the terrified prisoners. The parasite retaliates with unholy fury. It constricts your chest cavity. You drop to your knees, coughing up dark blood mixed with sharp, metallic gold shards as your left lung completely crystallizes into dead bullion. The pain is absolute agony.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -50, "morality": 40 },
+        "choices": [{ "text": "Drag your mutilated body forward into the cathedral", target: "hades_descent" }]
+    },
+    "hades_descent": {
+        "text": "Suddenly, the ground beneath the boulevard collapses into a bottomless void. You plummet into the glowing underworld. Hades—the Greek Sovereign of the Dead—awaits you upon a throne built from the skulls of dead kings. 'Musa, your parasite has slaughtered thousands. Their souls belong to me.'",
+        "name": "Hades",
+        "bg": "alley.png",
+        "flash": "#050508",
+        "choices": [
+            { "text": "💀 Sacrifice your closest remaining friend's soul to Hades to buy your way back to the surface", "target": "betray_friend_soul" },
+            { "text": "⚔️ Fight the Lord of the Dead using your decaying, agonizing magic", "target": "fight_hades_check" }
+        ]
+    },
+    "betray_friend_soul": {
+        "text": "You trade your loyal mentor’s lingering spirit to Hades without blinking. The god laughs, a hollow, mocking sound. The shadowy gates open, allowing you to ascend, but you can hear your friend's eternal screams echoing in your mind forever.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#4b0082",
+        "deltaStat": { "survival": 15, "morality": -40 },
+        "choices": [{ "text": "⏩ Advance into the deeper abyss", "target": "end_of_chapter" }]
+    },
+    "fight_hades_check": {
+        "text": "Recklessly, you attack the Lord of the Underworld. Hades simply waves his skeletal hand. The shadows strip your skin, tearing away your golden tracking marks. Your vital signs drop dangerously low as you are brutally cast into the weeping pits of Tartarus.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "deltaStat": { "survival": -45, "morality": 20 },
+        "choices": [{ "text": "Crawl out of the ash pits", target: "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Sanity levels dropping below critical status. Tracking dark alignment metrics... Loading Chapter 13 nightmare logs.",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 13", "target": "next_chapter_13" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
