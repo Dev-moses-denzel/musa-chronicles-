@@ -1,0 +1,293 @@
+:root {
+    --bg-blur: blur(16px);
+    --dark-overlay: rgba(10, 10, 15, 0.88);
+    --gold-neon: #ffcc00;
+    --crimson-neon: #ff3333;
+    --border-glow: rgba(255, 204, 0, 0.25);
+    --text-light: #f5f5f5;
+}
+
+* { 
+    box-sizing: border-box; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    touch-action: manipulation; 
+}
+
+body, html { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+    background-color: #050508; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    color: var(--text-light); 
+}
+
+#game-viewport { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    transition: background-image 0.6s ease-in-out; 
+}
+
+/* Beautiful Modern Game Home Title Screen Overlay Layout */
+#main-menu-screen {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(15,15,25,0.85) 0%, rgba(5,5,8,0.98) 100%), url('apartment.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    transition: opacity 0.5s ease-out;
+}
+
+.menu-brand-title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.6), 0 0 40px rgba(255, 204, 0, 0.3);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.menu-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--gold-neon);
+    margin-bottom: 50px;
+    text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+}
+
+.menu-action-cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 75%;
+    max-width: 260px;
+}
+
+.menu-start-btn {
+    background: linear-gradient(135deg, rgba(255,204,0,0.15) 0%, rgba(212,175,55,0.05) 100%);
+    border: 1px solid var(--border-glow);
+    color: #fff;
+    padding: 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    backdrop-filter: var(--bg-blur);
+    -webkit-backdrop-filter: var(--bg-blur);
+    transition: all 0.2s ease;
+}
+
+.menu-start-btn:active {
+    background: rgba(255, 204, 0, 0.25);
+    border-color: var(--gold-neon);
+    transform: scale(0.96);
+}
+
+#flash-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    pointer-events: none; 
+    z-index: 8; 
+    opacity: 0; 
+    transition: opacity 0.1s ease-out; 
+}
+
+#hud-layer { 
+    position: absolute; 
+    top: calc(15px + env(safe-area-inset-top)); 
+    left: 15px; 
+    right: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    z-index: 10; 
+}
+
+.hud-card { 
+    background: var(--dark-overlay); 
+    backdrop-filter: var(--bg-blur); 
+    -webkit-backdrop-filter: var(--bg-blur); 
+    padding: 10px 14px; 
+    border-radius: 25px; 
+    border: 1px solid var(--border-glow); 
+    font-size: 11px; 
+    font-weight: 700; 
+    letter-spacing: 0.08em; 
+    text-transform: uppercase; line-height: 1;
+}
+
+#stat-survival { 
+    color: var(--gold-neon); 
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5); 
+}
+
+#stat-alignment { 
+    color: #00ffcc; 
+}
+
+#save-menu-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.menu-box {
+    background: var(--dark-overlay);
+    border: 1px solid var(--border-glow);
+    padding: 25px;
+    border-radius: 20px;
+    width: 85%;
+    max-width: 320px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+.menu-box h3 {
+    margin-top: 0;
+    color: var(--gold-neon);
+    font-size: 16px;
+    letter-spacing: 0.1em;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+    padding: 14px;
+    margin: 8px 0;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.menu-btn:active {
+    background: rgba(255, 204, 0, 0.2);
+    border-color: var(--gold-neon);
+}
+
+.reset-btn { border-color: rgba(255, 51, 51, 0.3); }
+.close-btn { background: none; border: none; color: rgba(255,255,255,0.5); margin-top: 10px; }
+
+#choice-deck { 
+    position: absolute; 
+    top: 42%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 88%; 
+    max-width: 480px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 14px; 
+    z-index: 5; 
+}
+
+.action-card { 
+    background: var(--dark-overlay); 
+    backdrop-filter: var(--bg-blur); 
+    -webkit-backdrop-filter: var(--bg-blur); 
+    border: 1px solid var(--border-glow); 
+    border-radius: 14px; 
+    padding: 18px 24px; 
+    color: #fff; 
+    font-size: 14px; 
+    font-weight: 600; 
+    text-align: center; 
+    cursor: pointer; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    transition: all 0.2s ease; 
+}
+
+.action-card:active { 
+    background: rgba(255, 204, 0, 0.15); 
+    border-color: var(--gold-neon); 
+    transform: scale(0.98); 
+}
+
+#dialogue-window { 
+    position: absolute; 
+    bottom: calc(20px + env(safe-area-inset-bottom)); 
+    left: 16px; 
+    right: 16px; 
+    height: 175px; 
+    background: var(--dark-overlay); 
+    backdrop-filter: var(--bg-blur); 
+    -webkit-backdrop-filter: var(--bg-blur); 
+    border: 1px solid var(--border-glow); 
+    border-radius: 18px; 
+    padding: 22px; 
+    z-index: 4; 
+}
+
+#name-plate { 
+    position: absolute; 
+    top: -16px; 
+    left: 24px; 
+    background: linear-gradient(135deg, #ffcc00 0%, #d4af37 100%); 
+    color: #0a0a0f; 
+    padding: 5px 20px; 
+    border-radius: 8px; 
+    font-weight: 800; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.12em; 
+}
+
+#story-text { 
+    font-size: 14px; 
+    line-height: 1.6; 
+    margin-top: 8px; 
+    height: 105px; 
+    overflow-y: auto; 
+}
+
+#advance-indicator { 
+    position: absolute; 
+    bottom: 12px; 
+    right: 22px; 
+    font-size: 10px; 
+    text-transform: uppercase; 
+    color: rgba(255,255,255,0.4); 
+}
+
+@media (min-width: 1024px) {
+    #game-viewport { 
+        max-width: 480px; 
+        max-height: 854px; 
+        margin: 0 auto; 
+        border-radius: 16px; 
+        top: 50%; 
+        transform: translateY(-50%); 
+        box-shadow: 0 25px 60px rgba(0,0,0,0.8); 
+    }
+    body { 
+        background: #020204; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+}
