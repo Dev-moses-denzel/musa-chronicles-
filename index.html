@@ -13,8 +13,8 @@
             <div class="menu-brand-title">MUSA CHRONICLES</div>
             <div class="menu-subtitle">THE GOLDEN SCAR LEGACY</div>
             <div class="menu-action-cluster">
-                <button class="menu-start-btn" onclick="startGameFromMenu()">✨ INITIATE STORY</button>
-                <button class="menu-start-btn" onclick="executeLoadGame()">📂 LOAD FILES</button>
+                <button id="initiate-btn" class="menu-start-btn">✨ INITIATE STORY</button>
+                <button id="load-btn" class="menu-start-btn">📂 LOAD FILES</button>
             </div>
         </div>
 
@@ -23,21 +23,21 @@
         <div id="hud-layer">
             <div class="hud-card">SURVIVAL: <span id="stat-survival">100</span>%</div>
             <div class="hud-card">PATH: <span id="stat-alignment">NEUTRAL</span></div>
-            <div class="hud-card" onclick="toggleSaveMenu()" style="cursor: pointer;">💾 MENU</div>
+            <div id="hud-menu-btn" class="hud-card" style="cursor: pointer;">💾 MENU</div>
         </div>
 
-        <div id="save-menu-overlay" onclick="toggleSaveMenu()">
-            <div class="menu-box" onclick="event.stopPropagation()">
+        <div id="save-menu-overlay">
+            <div class="menu-box">
                 <h3>SYSTEM LOGS</h3>
-                <button class="menu-btn" onclick="executeSaveGame()">💾 QUICK SAVE PROGRESS</button>
-                <button class="menu-btn" onclick="executeLoadGame()">📂 LOAD LAST SAVE</button>
-                <button class="menu-btn reset-btn" onclick="restartCycle()">🔄 RESTART NEW GAME</button>
-                <button class="menu-btn close-btn" onclick="toggleSaveMenu()">❌ CLOSE MENU</button>
+                <button id="quick-save-btn" class="menu-btn">💾 QUICK SAVE PROGRESS</button>
+                <button id="quick-load-btn" class="menu-btn">📂 LOAD LAST SAVE</button>
+                <button id="restart-btn" class="menu-btn reset-btn">🔄 RESTART NEW GAME</button>
+                <button id="close-menu-btn" class="menu-btn close-btn">❌ CLOSE MENU</button>
             </div>
         </div>
 
         <div id="choice-deck"></div>
-        <div id="dialogue-window" onclick="triggerNext()">
+        <div id="dialogue-window">
             <div id="name-plate">System</div>
             <div id="story-text">Booting core narrative sequence...</div>
             <div id="advance-indicator">Tap To Proceed</div>
