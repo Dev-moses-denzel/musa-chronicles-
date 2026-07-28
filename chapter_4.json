@@ -1,0 +1,65 @@
+{
+    "start": {
+        "text": "The massive vault doors loom ahead. Elite security golems armed with heavy runic broadswords materialize from the gold-tinted defense portals, blocking the core mainframe console.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "🛡️ Cast a reflective shield to deflect their incoming strikes", "target": "hero_defend" },
+            { "text": "💀 Violently detonate the air molecules, shredding the golems", "target": "brutal_shred" }
+        ]
+    },
+    "hero_defend": {
+        "text": "You brace yourself and deploy an shimmering kinetic dome. The golems' blades strike the barrier, sending blinding white sparks ricocheting off the concrete walls.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -10, "morality": 10 },
+        "choices": [{ "text": "Slam the terminal bypass override", "target": "core_room" }]
+    },
+    "brutal_shred": {
+        "text": "You scream in fury, forcing your golden scar energy outward. The pressure inside the room multiplies instantly. The heavy metal golems are forcefully ripped apart, transmuting their fragments into jagged, lethal gold shrapnel that obliterates the entire security sector panel.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": -5, "morality": -20 },
+        "choices": [{ "text": "Step through the smoking wreckage into the chamber", "target": "core_room" }]
+    },
+    "core_room": {
+        "text": "You reach the absolute center of the Ministry. A giant pillar of dark crystalline mass known as the 'Anti-Bullion Core' floats silently above a swirling pool of liquid gold wealth-magic. It controls all economic tracking matrix data globally.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "✨ Purify the dark crystal with warm, selfless energy", "target": "purify_core" },
+            { "text": "👑 Consume the dark core to absorb its raw sovereign tyranny", "target": "brutal_absorb" }
+        ]
+    },
+    "purify_core": {
+        "text": "You pour your pure life essence into the crystal. The dark obsidian matter breaks away, dissolving into a brilliant, warm amber glow. The systemic tracking grid drops offline everywhere.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -20, "morality": 25 },
+        "choices": [{ "text": "Escape into the back service corridors", "target": "end_of_chapter" }]
+    },
+    "brutal_absorb": {
+        "text": "You plunge your bare hands straight into the dark core, tearing it open. The corrupted violet cosmic fluid forces its way into your gold scar, turning your eyes entirely black. You feel absolute dominion over every bank account, mind, and soul in the city.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "deltaStat": { "survival": 30, "morality": -40 },
+        "choices": [{ "text": "March toward the exit to claim your crown", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "The entire bank structure begins shaking violently from the structural magic feedback. Mainframe bridging sequences initiating...",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 5", "target": "next_chapter_5" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
