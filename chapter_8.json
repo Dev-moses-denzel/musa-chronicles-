@@ -1,0 +1,48 @@
+{
+    "start": {
+        "text": "You reach the summit of the ruined World Bank towers. Below you, the armies of human billionaires, Roman legions, Greek gods, and Egyptian pharaohs await your absolute final command. Your morality ranking will decide the fate of history.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "👑 [REQUIRES RUTHLESS ALIGNMENT] Enslave all gods and kings to rule alone", "target": "tyrant_check" },
+            { "text": "🕊️ [REQUIRES HEROIC ALIGNMENT] Sacrifice your scar to banish all magic from the world", "target": "hero_check" }
+        ]
+    },
+    "tyrant_check": {
+        "text": "Checking morality ledger variables... If your alignment is RUTHLESS, your ultimate rule is guaranteed.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "Unleash the ultimate Sovereign gold wave", "target": "brutal_god_ending" }
+        ]
+    },
+    "hero_check": {
+        "text": "Checking morality ledger variables... If your alignment is HEROIC, your world liberation is guaranteed.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "Shatter the scar to save mankind", "target": "mortal_peace_ending" }
+        ]
+    },
+    "brutal_god_ending": {
+        "text": "You choose absolute violence. You channel the entirety of the Golden Scar's power, casting a colossal violet-gold shockwave across the planet. You watch without blinking as Zeus, Nero, Ramses, and every mortal billionaire are turned instantly into frozen gold statues. The world is a quiet, dead museum of precious metal. You sit alone on your throne of solid gold bones as the eternal, terrifying master of the cosmos. [MYTHOLOGICAL TYRANT ENDING]",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ff0000",
+        "choices": [{ "text": "🔄 Reset the timeline loop", "target": "next_chapter_1" }]
+    },
+    "mortal_peace_ending": {
+        "text": "With a peaceful smile, you plunge a runic blade straight into your gold scar. A brilliant, pure blinding white light engulfs the planet. The magic of the Greek, Roman, and Egyptian pantheons evaporates into nothingness, returning all ancient gods to myths. You live out your days as an ordinary human, but humanity is free to build its own destiny, completely free of corporate debt and divine tyranny. [THE AGE OF MAN ENDING]",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "🔄 Reset the timeline loop", "target": "next_chapter_1" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
