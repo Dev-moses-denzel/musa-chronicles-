@@ -62,3 +62,4 @@
         "name": "Musa",
         "bg": "alley.png",
         
+    "flash": "#ffffff","choices": [{ "text": "⏩ Advance past the ruined summit into the divine storm", "target": "next_chapter_9" }]},"defeat": {"text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.","name": "System","bg": "alley.png","flash": "#ff0000","choices": []}}
