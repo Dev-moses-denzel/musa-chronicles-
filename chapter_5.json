@@ -1,0 +1,33 @@
+{
+    "start": {
+        "text": "You smash through the front glass lobby doors of the bank. Outside, the night sky is illuminated by blinding red spotlights. A massive legion of heavily armed Ministry Enforcers have blocked off the entire boulevard.",
+        "name": "Commander",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "choices": [
+            { "text": "🏃‍♂️ Surrender yourself to protect innocent bystanders near the street", "target": "hero_ending" },
+            { "text": "🔥 Unleash a brutal, catastrophic gold storm across the army", "target": "brutal_ending" }
+        ]
+    },
+    "hero_ending": {
+        "text": "You drop your wand, allowing the heavy stasis collars to bind your neck. As you are dragged away into the dark transport, the public cheers your name. The tracking grid you dismantled frees the lower districts from debt forever. You are an imprisoned icon of freedom. [HEROIC SACRIFICE ENDING]",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "🔄 Loop back to the beginning of the timeline", "target": "next_chapter_1" }]
+    },
+    "brutal_ending": {
+        "text": "You unleash total devastation. Your out-of-control gold scar opens completely, casting a massive golden shockwave that rips down the boulevard. You watch without blinking as hundreds of military vehicles, weapons, and enforcers are instantaneously melted down into liquid, burning gold slurry. The concrete streets are painted in shimmering gold blood. Standing amidst the smoking ashes of the old world, you are the undisputed, terrifying Sovereign of Gold. [RUTHLESS TYRANT ENDING]",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": [{ "text": "🔄 Loop back to the beginning of the timeline", "target": "next_chapter_1" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
