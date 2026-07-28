@@ -15,7 +15,7 @@ const narrativeMatrix = {
         name: "System",
         bg: "apartment.png", 
         flash: "#ffcc00",
-        vibrate:, // High-performance Android double pulse
+        vibrate:,
         deltaStat: { survival: -15, morality: 10 },
         choices: [{ text: "Head down into the rain-slicked city alleys", target: "act1_alley_entry" }]
     },
@@ -24,7 +24,7 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "apartment.png", 
         flash: "#ff3333",
-        vibrate:, // Heavy crash haptic rumble
+        vibrate:,
         deltaStat: { survival: 0, morality: -10 },
         choices: [{ text: "Step out into the smoky back alleys", target: "act1_alley_entry" }]
     },
@@ -42,7 +42,7 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "alley.png", 
         flash: "#ffffff",
-        vibrate:, // Fight clashing rhythm
+        vibrate:,
         deltaStat: { survival: -20, morality: 15 },
         choices: [{ text: "Stumble forward into the deeper streets", target: "act2_intro" }]
     },
@@ -51,7 +51,7 @@ const narrativeMatrix = {
         name: "Narrator",
         bg: "alley.png", 
         flash: "#800080",
-        vibrate:, // Twin bone crushing impacts
+        vibrate:,
         deltaStat: { survival: 5, morality: -20 },
         choices: [{ text: "March forward to claim your kingdom", target: "act2_intro" }]
     },
@@ -144,13 +144,13 @@ const narrativeMatrix = {
 };
 
 function startGameFromMenu() {
-    // Android 10+ requires an active user tap gesture before allowing haptic feedback or storage hooks
-    triggerVibration([100, 50, 100]); 
     const startScreen = document.getElementById("main-menu-screen");
     if (startScreen) {
         startScreen.style.opacity = "0";
         setTimeout(() => { startScreen.style.display = "none"; }, 500);
     }
+    // Safe haptic fallback system invocation context check
+    if ("vibrate" in navigator) { navigator.vibrate(100); }
     drawScreen("act1_start");
 }
 
@@ -212,4 +212,7 @@ function drawScreen(nodeKey) {
         if (data.deltaStat.survival) tracker.survival += data.deltaStat.survival;
         if (data.deltaStat.morality) tracker.morality += data.deltaStat.morality;
         
-tracker.survival = Math.max(0, Math.min(100, tracker.survival));document.getElementById("stat-survival").innerText = tracker.survival;let alignmentText = "NEUTRAL";if (tracker.morality > 5) alignmentText = "HERO";if (tracker.morality < -5) alignmentText = "RUTHLESS VILLAIN";const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = alignmentText;alignTag.style.color = tracker.morality >= 0 ? "#00ffcc" : "#ff3333";}delete data.deltaStat;}if (tracker.survival <= 0 && nodeKey !== "defeat") {drawScreen("defeat");return;}const viewport = document.getElementById("game-viewport");if (viewport) viewport.style.backgroundImage = url('${data.bg}');document.getElementById("name-plate").innerText = data.name;document.getElementById("story-text").innerText = data.text;const choicesBox = document.getElementById("choice-deck");const indicator = document.getElementById("advance-indicator");if (!choicesBox || !indicator) return;choicesBox.innerHTML = "";if (data.choices && data.choices.length > 0) {indicator.style.display = "none";data.choices.forEach(opt => {const card = document.createElement("div");card.className = "action-card";card.innerText = opt.text;card.onclick = (e) => { e.stopPropagation(); drawScreen(opt.target); };choicesBox.appendChild(card);});} else {indicator.style.display = "block";indicator.innerText = "End of Node - Open Menu To Reset";}}function triggerNext() {const current = narrativeMatrix[tracker.activeNode];if (current && current.choices && current.choices.length === 1) {drawScreen(current.choices.target);}}function restartCycle() {tracker.survival = 100;tracker.morality = 0;document.getElementById("stat-survival").innerText = tracker.survival;const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = "NEUTRAL";alignTag.style.color = "#00ffcc";}const overlay = document.getElementById("save-menu-overlay");if (overlay) overlay.style.display = "none";const startScreen = document.getElementById("main-menu-screen");if(startScreen) {startScreen.style.display = "flex";startScreen.style.opacity = "1";}drawScreen("act1_start");}
+        tracker.survival = Math.max(0, Math.min(100, tracker.survival));
+        document.getElementById("stat-survival").innerText = tracker.survival;
+
+        let alignmentText = "NEUTRAL";if (tracker.morality > 5) alignmentText = "HERO";if (tracker.morality < -5) alignmentText = "RUTHLESS VILLAIN";const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = alignmentText;alignTag.style.color = tracker.morality >= 0 ? "#00ffcc" : "#ff3333";}delete data.deltaStat;}if (tracker.survival <= 0 && nodeKey !== "defeat") {drawScreen("defeat");return;}const viewport = document.getElementById("game-viewport");if (viewport) viewport.style.backgroundImage = url('${data.bg}');document.getElementById("name-plate").innerText = data.name;document.getElementById("story-text").innerText = data.text;const choicesBox = document.getElementById("choice-deck");const indicator = document.getElementById("advance-indicator");if (!choicesBox || !indicator) return;choicesBox.innerHTML = "";if (data.choices && data.choices.length > 0) {indicator.style.display = "none";data.choices.forEach(opt => {const card = document.createElement("div");card.className = "action-card";card.innerText = opt.text;card.onclick = (e) => { e.stopPropagation(); drawScreen(opt.target); };choicesBox.appendChild(card);});} else {indicator.style.display = "block";indicator.innerText = "End of Node - Open Menu To Reset";}}function triggerNext() {const current = narrativeMatrix[tracker.activeNode];if (current && current.choices && current.choices.length === 1) {drawScreen(current.choices.target);}}function restartCycle() {tracker.survival = 100;tracker.morality = 0;document.getElementById("stat-survival").innerText = tracker.survival;const alignTag = document.getElementById("stat-alignment");if (alignTag) {alignTag.innerText = "NEUTRAL";alignTag.style.color = "#00ffcc";}const overlay = document.getElementById("save-menu-overlay");if (overlay) overlay.style.display = "none";const startScreen = document.getElementById("main-menu-screen");if(startScreen) {startScreen.style.display = "flex";startScreen.style.opacity = "1";}drawScreen("act1_start");}
