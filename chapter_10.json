@@ -1,0 +1,46 @@
+{
+    "start": {
+        "text": "Inside the industrial sector, Emperor Nero of the Roman Centurions stands unprotected near a damaged command terminal, his defensive legions distracted by Norse air strikes. This is your chance to change the geopolitical layout of the war permanently.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "🗡️ Execute a brutal, silent assassination on Nero to seize his empire's terminal keys", "target": "assassinate_nero" },
+            { "text": "🛡️ Protect the fleeing human refugees by drawing Nero's mechanical artillery fire away from them", "target": "save_refugees_check" }
+        ]
+    },
+    "assassinate_nero": {
+        "text": "You creep behind the tyrant emperor and plunge your golden-charged hands into his cybernetic neural link. Nero gasps as his circuits are completely flooded with molten gold bullion, freezing his voice box permanently. You tear the master legion keycard from his lifeless metallic armor.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 15, "morality": -30 },
+        "choices": [{ "text": "Access his master automated drone network", "target": "throne_room_approach" }]
+    },
+    "save_refugees_check": {
+        "text": "You dive into the open streets, using your gold scar to project a massive physical barrier over a group of trapped citizens. Nero notices you instantly, turning his heavy plasma cannons in your direction. The direct impact shatters your armor, inflicting severe physical trauma, but the families escape into the tunnels safely.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "deltaStat": { "survival": -40, "morality": 35 },
+        "choices": [{ "text": "Drag your bleeding body forward into the central fortress", "target": "throne_room_approach" }]
+    },
+    "throne_room_approach": {
+        "text": "You ascend to the High Citadel overlooking the metropolitan grid. The entire global conflict converges on this single coordinate. The throne of the old world sits empty, waiting for a ruler.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Step onto the ultimate command balcony", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Sovereign trajectory calculation parameters complete. Synchronizing master destiny branches... Loading Chapter 11 data.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 11", "target": "next_chapter_11" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
