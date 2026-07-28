@@ -1,0 +1,46 @@
+{
+    "start": {
+        "text": "Albus Kojo looks at you with sorrow, holding a glowing binding magic seal. 'Forgive me, Musa. The Ministry offered me infinite resources. Your gold magic threatens the stability of the entire wizard economy.'",
+        "name": "Albus Kojo",
+        "bg": "alley.png", 
+        "flash": "#ffcc00",
+        "choices": [
+            { "text": "🤝 Try to reason with Albus and surrender peaceful terms", "target": "hero_surrender" },
+            { "text": "🗡️ Brutally unleash a lethal golden curse directly into his chest", "target": "brutal_kill" }
+        ]
+    },
+    "hero_surrender": {
+        "text": "You lower your hands. Albus steps forward and locks heavy, freezing runic cuffs onto your wrists. The spell strips your energy signature instantly, leaving you incredibly weak.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "deltaStat": { "survival": -30, "morality": 25 },
+        "choices": [{ "text": "Force your way out of the transport vehicle", "target": "vault_arrival" }]
+    },
+    "brutal_kill": {
+        "text": "Zero hesitation. You channel pure rage into your gold scar. A violent beam of energy tears through Albus's chest. You watch coldly as his cells instantly calcify, transmuting his entire body into a dead, lifeless solid gold statue on the wet asphalt. You snap his frozen gold fingers off to claim his master security keycard.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 5, "morality": -30 },
+        "choices": [{ "text": "Stride past his golden corpse to the Ministry Bank", "target": "vault_arrival" }]
+    },
+    "vault_arrival": {
+        "text": "You stand before the towering reinforced vault gates of the central Neo-Ministry Bank. Millions of stolen gold coins hum with stored magical current inside the facility floors. This is the source of their absolute tracking dominion over every citizen.",
+        "name": "System",
+        "bg": "apartment.png", 
+        "choices": [{ "text": "⏩ Advance deep into the bank facility", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "The alarms begin echoing through the bank's subterranean marble halls. Securing security mainframe connections... Preparing next sector layer data loading sequences.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 4", "target": "next_chapter_4" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
