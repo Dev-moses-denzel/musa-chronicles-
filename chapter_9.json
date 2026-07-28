@@ -1,0 +1,56 @@
+{
+    "start": {
+        "text": "The skies over the grand summit darken to a deep obsidian purple. Odin, the Allfather of the Norse Pantheon, descends upon a metallic eight-legged steed, flanked by Thor, the God of Thunder. 'Musa! You broke the tracking grids of the lesser empires. Hand over the Golden Scar, or your mortal realm faces total ragnarok.'",
+        "name": "Odin Allfather",
+        "bg": "alley.png", 
+        "flash": "#800080",
+        "choices": [
+            { "text": "🤝 Betray your human allies and trade Mansa Musa II's locations to Odin for safety", "target": "betray_mansa" },
+            { "text": "⚔️ Rebel with absolute free will and attack Odin directly with your scar magic", "target": "fight_odin_check" },
+            { "text": "🏃‍♂️ Order a strategic retreat into the deeper industrial catacombs", "target": "tactical_retreat" }
+        ]
+    },
+    "betray_mansa": {
+        "text": "You prioritize your own survival, handing over the encryption frequencies to Mansa Musa II’s corporate fortress. Odin nods with a cold, transactional stare. Thor flies down, instantly obliterating the human resistance base. Your conscience burns, but your pockets run deep.",
+        "name": "Thor",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 20, "morality": -35 },
+        "choices": [{ "text": "Claim your blood-money commission from the Norse vanguard", "target": "norse_outpost" }]
+    },
+    "fight_odin_check": {
+        "text": "You reject submission, unleashing a searing jet of gold bullion magic directly at the Allfather. But Odin is a primordial cosmic entity, centuries older than your magic core. His runic spear Gungnir deflects your blast instantly, sending a punishing feedback shockwave straight through your neural grid.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ff0000",
+        "deltaStat": { "survival": -45, "morality": 15 },
+        "choices": [{ "text": "Cough up blood and stagger backward into the smoke", "target": "norse_outpost" }]
+    },
+    "tactical_retreat": {
+        "text": "Recognizing the vast power disparity, you command your vanguard to drop smoke barriers. You slip down a heavy ventilation shaft, leading your people deep into the dark subterranean metro grid. You saved your faction from a total massacre.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": 10, "morality": 20 },
+        "choices": [{ "text": "Regroup inside the concrete industrial bunkers", "target": "norse_outpost" }]
+    },
+    "norse_outpost": {
+        "text": "The city landscape has turned into a fractured, war-torn zone. Norse dreadnoughts patrol the skies, while remnants of the Roman Centurions attempt to lock down the lower districts. The battle lines are completely blurred.",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance into the shifting tactical warzone", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Free-will decision vectors logged into core database. Compiling narrative path variables... Loading Chapter 10 asset structures.",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 10", "target": "next_chapter_10" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
