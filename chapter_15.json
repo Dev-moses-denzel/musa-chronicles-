@@ -132,3 +132,50 @@
         "deltaStat": { "survival": -20, "morality": 5 },
         "choices": [{ "text": "Look up at the pulsing heart of the network grid", "target": "final_core_confrontation" }]
     }
+
+
+    ,
+    "final_core_confrontation": {
+        "text": "You pull yourself up onto the primary command console of the World Financial Ledger Engine. The organic mechanical heart pumps liquid gold bullion through thousands of translucent glass pipes that run upward into the city streets above. A final security hologram flickers to life—it is the phantom projection of Pharaoh Ramses the Great. 'Musa,' his image whispers, his voice distorted by severe code corruption. 'If you pull those master server levers, you will rewrite the economic DNA of the cosmos. Every empire will fall. Choose your legacy carefully.' Your gold scar splits open completely from the emotional stress, blood and gold dust running down your face as the entire structure begins its final countdown sequence.",
+        "name": "Ramses Hologram",
+        "bg": "apartment.png",
+        "flash": "#ffaa00",
+        "choices": [
+            { "text": "👑 [REQUIRES RUTHLESS RUN] Reverse the extraction pumps to forcibly siphon all mortal lifeforce into your scar, completing your tyrant transformation", "target": "tyrant_bridge_check" },
+            { "text": "🕊️ [REQUIRES HEROIC RUN] Overload the engine arrays to redistribute the accumulated wealth back to the slums, preparing your martyrdom", "target": "hero_bridge_check" }
+        ]
+    },
+    "tyrant_bridge_check": {
+        "text": "Synchronizing morality coordinates... The tracking ledger reads your alignment as heavily corrupted. The Aurum Worm takes complete ownership of your nervous system, locking your single remaining arm onto the primary extraction switch.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "choices": [{ "text": "⏩ Seal your dark fate and advance to Chapter 16", "target": "end_of_chapter_15_dark" }]
+    },
+    "hero_bridge_check": {
+        "text": "Synchronizing morality coordinates... The tracking ledger registers your persistent selflessness despite your severe physical mutilation. A warm amber aura pushes back the dark whispers of the parasite inside your skull.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "⏩ Accept your heavy burden and advance to Chapter 16", "target": "end_of_chapter_15_light" }]
+    },
+    "end_of_chapter_15_dark": {
+        "text": "The glass pipes turn a deep, poisonous violet color as the machine begins draining the life currents of the upper grids. Preparing dark pathway configurations... Loading Chapter 16 data logs.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Initialize Chapter 16", "target": "next_chapter_16" }]
+    },
+    "end_of_chapter_15_light": {
+        "text": "The machine whirs with a radiant, warm golden light as the currency networks begin fracturing peacefully. Preparing heroic pathway configurations... Loading Chapter 16 data logs.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Initialize Chapter 16", "target": "next_chapter_16" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
