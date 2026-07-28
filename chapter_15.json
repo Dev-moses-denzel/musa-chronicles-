@@ -95,3 +95,40 @@
         "choices": []
     }
 }
+
+    ,
+    "terminal_approach": {
+        "text": "You emerge onto a massive catwalk over an ocean of pure, white-hot molten gold. In the center sits the World Financial Ledger Engine—a towering mechanical heart wrapped in ancient iron chains. Suddenly, the ceiling shatters. Zeus, Prime Executive of the Olympus Syndicate, descends clad in gold-plated armor, arcs of blue high-voltage current crackling from his fingers. Beside him, Emperor Nero of the Roman Centurion Elite steps from a heavy, multi-legged mechanical combat mech, its twin plasma turrets locking directly onto your chest. 'Musa!' Nero barks through his suit's audio grid. 'You are a parasite on our system. Hand over the Golden Scar, or we will turn your body into a slag heap.' The air becomes so compressed by divine and mechanical energy that your skin begins to split and bleed from the ambient pressure alone.",
+        "name": "Nero & Zeus",
+        "bg": "apartment.png",
+        "flash": "#00ffff",
+        "choices": [
+            { "text": "⚔️ [BRUTAL CONFLICT] Channel the full, unholy fury of the Aurum Worm to rip Nero's mech apart and tear Zeus out of the sky", "target": "god_war_brutal" },
+            { "text": "🧠 [TACTICAL DECEPTION] Offer to link your scar to their network, using yourself as a Trojan virus to fry their systems from within", "target": "trojan_virus_check" },
+            { "text": "🏃‍♂️ [TACTICAL RETREAT] Dive straight off the catwalk into the molten gold ocean, trusting your magic to protect you from the heat", "target": "molten_dive" }
+        ]
+    },
+    "god_war_brutal": {
+        "text": "You scream as the Aurum Worm tears through your skin, weaving thousands of razor-sharp liquid gold wires through the air. You sprint directly at Nero's mech as his plasma turrets fire, vaporizing your left shoulder down to charred bone. You don't even flinch. You slam your golden hands into the mech's core, forcing your parasite inside. Nero screams as his cybernetic implants instantly calcify into solid gold bullion, exploding his cockpit from the inside out. Zeus launches a colossal lightning bolt that pierces your lungs, stopping your heart. In pure madness, you grab Zeus by the throat, forcing your gold-scar energy directly down his throat until his divine veins turn into cold, solid golden lead. He crashes into the abyss, dead. You collapse in the smoke, your survival metrics dangerously close to total failure.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": -65, "morality": -40 },
+        "choices": [{ "text": "Crawl toward the mechanical heart terminal using your one remaining arm", "target": "final_core_confrontation" }]
+    },
+    "trojan_virus_check": {
+        "text": "You raise your hands in fake surrender, kneeling before the gods. 'Take it,' you whisper, extending your glowing palm. Zeus smirks, firing a precise containment beam that links your scar straight into the central financial ledger network. The moment the connection locks, you unleash a massive, silent psychological command through the wire. The parasite inside your head wakes up, traveling up the data beam like a digital plague. Nero’s mech interface instantly screens red with thousands of corrupted currency errors. Zeus drops to his knees, clutching his skull as your dark gold hallucinations flood his mind with memories of every mortal soul he has ever starved. They are completely paralyzed by the feedback loop, but the back-surge of raw code fractures your own brain, dropping your vital signs significantly.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": -35, "morality": 15 },
+        "choices": [{ "text": "Break the link and stagger forward to the ledger controls", "target": "final_core_confrontation" }]
+    },
+    "molten_dive": {
+        "text": "Before Nero can pull the trigger, you sprint and cast a total transmutation shroud over your own skin, throwing yourself off the edge into the boiling sea of white-hot liquid gold below. The heat is an unspeakable, horrifying sensory torment. Your clothes and hair are vaporized instantly, but the Aurum Worm inside you feeds on the raw elemental wealth, rapidly spinning a protective cocoon of metallic scales over your burning tissue. You swim through the blinding, glowing fluid, completely invisible to their surface radar systems. You bypass their entire security perimeter, dragging your freshly armored, terrifying metallic body out of the pool directly at the foot of the Ledger Engine core. You are heavily scarred, but your positioning is flawless.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -20, "morality": 5 },
+        "choices": [{ "text": "Look up at the pulsing heart of the network grid", "target": "final_core_confrontation" }]
+    }
