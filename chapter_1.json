@@ -1,0 +1,65 @@
+{
+    "start": {
+        "text": "Musa snaps awake. His scar pulses bright gold. Around his luxury penthouse apartment, furniture is levitating—transmuting entirely into solid gold bullion. Your out-of-control magic is breaking the room's physical structure. Dust filters through neon light streams outside.",
+        "name": "Musa",
+        "bg": "apartment.png", 
+        "choices": [
+            { "text": "✨ Absorb the wealth-magic to protect the building", "target": "hero_absorb" },
+            { "text": "💥 Detonate the golden structures to force a way out", "target": "villain_detonate" }
+        ]
+    },
+    "hero_absorb": {
+        "text": "You channel the raw wealth-magic safely back into your core. The floating objects settle, but the intense physical drain makes your pulse race wildly. Your gold scar burns with immense friction.",
+        "name": "System",
+        "bg": "apartment.png", 
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -15, "morality": 10 },
+        "choices": [{ "text": "Head down into the rain-slicked city alleys", "target": "alley_entry" }]
+    },
+    "villain_detonate": {
+        "text": "You smile coldly and detonate the structures. Gold shrapnel bursts outward, obliterating the wall. You drop smoothly down into the wet concrete corridors below, ignoring the alarms blaring behind you.",
+        "name": "Narrator",
+        "bg": "apartment.png", 
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 0, "morality": -10 },
+        "choices": [{ "text": "Step out into the smoky back alleys", "target": "alley_entry" }]
+    },
+    "alley_entry": {
+        "text": "Cold rain pours down. Suddenly, an elite assassin from the Ministry of Wealth steps from the shadows, blocking your path with an activated glowing runic blade.",
+        "name": "Alchemist Assassin",
+        "bg": "alley.png", 
+        "choices": [
+            { "text": "🛡️ Raise a protective gold shield and question them", "target": "hero_shield" },
+            { "text": "⚡ Infuse their heavy armor with dense magic, crushing them", "target": "villain_crush" }
+        ]
+    },
+    "hero_shield": {
+        "text": "Your shield blocks their strike! The magic collision creates a blinding white flash. The assassin jumps backward into the dark, leaving you bleeding but uncorrupted.",
+        "name": "Narrator",
+        "bg": "alley.png", 
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -20, "morality": 15 },
+        "choices": [{ "text": "Stumble forward into the deeper streets", "target": "end_of_chapter" }]
+    },
+    "villain_crush": {
+        "text": "Their iron gear transforms into solid, heavy gold bullion, crushing them instantly to the wet asphalt. A purple shockwave clears the rain. You walk past without looking back.",
+        "name": "Narrator",
+        "bg": "alley.png", 
+        "flash": "#800080",
+        "deltaStat": { "survival": 5, "morality": -20 },
+        "choices": [{ "text": "March forward to claim your kingdom", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "You escape the immediate perimeter, but sirens sound in the distance. The Ministry grid is locking down your signature. Preparing network bridge to the next sector...",
+        "name": "System",
+        "bg": "alley.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 2", "target": "next_chapter_2" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
