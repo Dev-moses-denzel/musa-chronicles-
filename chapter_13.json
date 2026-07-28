@@ -1,0 +1,46 @@
+{
+    "start": {
+        "text": "You crawl back into the neon ruins of the surface world. The Roman and Egyptian gods have combined forces into an unholy tyrannical coalition. They are using an ancient ritual to drain the lifeforce of every single infant in the lower districts to build an immortal sky kingdom.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "🩸 Use your parasite's ultimate execution spell to violently drain the coalition's army, killing millions instantly", "target": "apocalyptic_slaughter" },
+            { "text": "🧬 Manually hook your own heartbeat to the grid to act as a living battery, suffering perpetual torture to shield the children", "target": "eternal_battery_check" }
+        ]
+    },
+    "apocalyptic_slaughter": {
+        "text": "You give in to total darkness. You command the Aurum Worm to release its ultimate curse. Across the entire hemisphere, millions of enemy soldiers and civilians explode from within as their blood boil transforms into razor-sharp gold needles. The streets run black with sludge. You laugh like a manic god amidst the planetary graveyard.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ff3333",
+        "deltaStat": { "survival": 40, "morality": -60 },
+        "choices": [{ "text": "Stride toward the cosmic core terminal", "target": "abyssal_citadel" }]
+    },
+    "eternal_battery_check": {
+        "text": "You plunge heavy, red-hot copper cables directly into your open gold scar, routing the grid through your own nervous system. Every time the coalition draws power, your flesh burns and peels away, leaving raw metallic bone exposed. You are trapped in an endless loop of horrifying somatic agony, but the kids survive.",
+        "name": "Narrator",
+        "bg": "apartment.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -45, "morality": 50 },
+        "choices": [{ "text": "Drag your skeletal frame to the final platform", target: "abyssal_citadel" }]
+    },
+    "abyssal_citadel": {
+        "text": "You stand atop the central spire. The skies have cracked open entirely, revealing a bleeding cosmic eye looking down at the ruined planet. The grand finale of your timeline has arrived.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Step into the ultimate crucible of fate", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Calculating permanent morality corruption variables... Syncing apocalyptic destiny arrays... Loading Chapter 14.",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 14", "target": "next_chapter_14" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
