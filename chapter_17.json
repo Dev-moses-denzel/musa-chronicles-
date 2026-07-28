@@ -1,0 +1,32 @@
+{
+    "start": {
+        "text": "The temporal distortion field settles into absolute, deafening silence. You stand at the center of the world's ruined grid—the absolute pinnacle of the high citadel tower or the quiet radioactive edge of the empty wasteland. The skies have stopped bleeding crimson static; instead, they have locked into an unmoving, iridescent cosmic crystal sheets. Your historical database parameters have finished running their calculations on every action you chose. Whether you betrayed your closest mentors, slaughtered ancient emperors, or mutilated your own physical flesh to shield the weak, your free will has successfully broken the old economic tracking matrix. The universe now stands entirely frozen, waiting for your final thought to permanently lock in the ultimate legacy shape of the cosmos.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#050508",
+        "choices": [
+            { "text": "👑 [CONFIRM RUTHLESS STATUS] Unleash the ultimate planetary transaction lock code to seal your tyrannical empire", "target": "tyrant_climax" },
+            { "text": "🕊️ [CONFIRM HEROIC STATUS] Disperse your final remnants of energy to dissolve the concept of gold magic forever", "target": "hero_climax" }
+        ]
+    },
+    "tyrant_climax": {
+        "text": "You place your bare, violet-glowing hand onto the master mainframe glass console. The encryption algorithms you stole from Mansa Musa II and Emperor Nero integrate seamlessly into your gold scar. A low, terrifying sub-atomic hum shakes the foundations of the entire tectonic plate. The parasite inside your head merges fully with your brain stem, stripping away your final remnants of human empathy. Across the continents, millions of surviving citizens and cowering soldiers instantly freeze as a sudden, pulsing tracking rune burned into their skin. Their minds are pulled straight into your central network grid, making their thoughts, their bodies, and their financial transactions completely transparent to your single mental interface. You have built a flawless, permanent empire of precious metal.",
+        "name": "The Golden Sovereign",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "deltaStat": { "survival": 50, "morality": -100 },
+        "choices": [
+            { "text": "Step out onto the eternal throne balcony to witness your silent museum world", "target": "abyssal_tyrant_ending" }
+        ]
+    },
+    "hero_climax": {
+        "text": "You drag your frail, bleeding human frame toward the cracked central terminal. Without the parasite, your body feels incredibly cold, but your mind is perfectly quiet for the first time since you snapped awake in the penthouse apartment. You manually configure the network bridge to execute a total planetary overload sequence. You draw the remaining rogue current of the Greek lightning, the Egyptian solar fire, and the Roman mechanical weapons directly into your own chest cavity, acting as a final living ground wire. The pain is a blinding white fire that shears your nerve endings apart, but you hold onto the terminal levers with everything you have left. The tracking network shatters, its glass cables cracking open all over the map.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -90, "morality": 100 },
+        "choices": [
+            { "text": "Plunge the levers down completely to let the light wash the planet clean", "target": "immortal_martyr_ending" }
+        ]
+    }
+  
