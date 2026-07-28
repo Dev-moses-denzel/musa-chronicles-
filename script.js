@@ -204,7 +204,7 @@ function drawScreen(nodeKey) {
 
     document.getElementById("name-plate").innerText = node.name;
     document.getElementById("story-text").innerText = node.text;
-    document.getElementById("game-viewport").style.backgroundImage = `url('${node.bg}')`;
+    document.getElementById("game-viewport").style.backgroundImage = `url('./${node.bg}')`;
 
     if (node.flash) {
         const flash = document.getElementById("flash-overlay");
