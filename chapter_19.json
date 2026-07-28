@@ -1,0 +1,41 @@
+{
+    "start": {
+        "text": "Deep within the industrial catacombs, you stumble upon an active, high-tech tactical furnace built by deep-cover Asgardian engineers. Inside, the shattered fragments of Thor's legendary war armor are being smelted down into pure, raw cosmic lead. Harnessing this furnace could give you an ultimate weapon against the Roman armies.",
+        "name": "Asgardian Forge",
+        "bg": "alley.png",
+        "flash": "#ffaa00",
+        "choices": [
+            { "text": "🛡️ Forge a protective metallic alloy shield to safely insulate the mortal refugees from orbital lasers", "target": "forge_shield" },
+            { "text": "🗡️ Brutally craft an anti-deity gold blade designed to execute cosmic entities with single strikes", "target": "forge_blade" }
+        ]
+    },
+    "forge_shield": {
+        "text": "You operate the thermal console, weaving your gold scar frequencies into the melting armor. A heavy, shimmering buckler drops from the automated assembly line, giving your team perfect tactical coverage for the coming wars.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": 15, "morality": 20 },
+        "choices": [{ "text": "Leave the industrial zone with your gear", "target": "end_of_sidequest_2" }]
+    },
+    "forge_blade": {
+        "text": "You let out a dark smile, commanding the furnace to maximize its outputs. The liquid metal is forced straight into a jagged blade shape, glowing with a dangerous violet electrical aura. You feel fully equipped to slaughter any king or god who crosses your path.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": -5, "morality": -30 },
+        "choices": [{ "text": "Sheathe the unholy weapon and step out into the rain", "target": "end_of_sidequest_2" }]
+    },
+    "end_of_sidequest_2": {
+        "text": "Tactical asset acquisition records updated successfully inside the engine logs. Linking data variables directly back to Chapter 17...",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Re-enter Main Story Chapter 17", "target": "next_chapter_17" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
