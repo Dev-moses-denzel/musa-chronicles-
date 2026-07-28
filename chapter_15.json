@@ -1,0 +1,97 @@
+{
+    "start": {
+        "text": "CHAPTER 15: THE ASHEN THRESHOLD. The phantom screams of the friends you traded away echo through the cavernous walls of Tartarus. The air here tastes like sulfur and powdered copper. Your left crystallized lung clicks agonizingly with every breath. You are standing before the River Phlegethon—a rushing torrent of liquid white-hot gold bullion and boiling blood that separates you from the deepest vault of the cosmos. The Aurum Worm inside your skull is thrashing frantically, starved for fresh life force.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ff3333",
+        "choices": [
+            { "text": "👣 Wade deep into the searing river of molten gold, trusting your raw resilience", "target": "c15_p1_pain" },
+            { "text": "👁️ Commune directly with the parasite, offering it full control of your vision to bridge the gap", "target": "c15_p1_blind" }
+        ]
+    },
+    "c15_p1_pain": {
+        "text": "[PAGE 1] The moment your boots break the surface of the river, the flesh on your shins begins to vaporize. You howl into the dark void, but no sound escapes your parched throat. The parasitic worm feeds greedily on your agony, knitting gold mesh across your raw nerve endings to keep you from falling unconscious. Every step forward feels like walking through jagged glass and liquid sun. Your survival stats are plummeting, yet your free will forces your legs to move forward.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": -25, "morality": 5 },
+        "choices": [{ "text": "⏩ Press deeper into the suffocating current", "target": "c15_p2_current" }]
+    },
+    "c15_p1_blind": {
+        "text": "[PAGE 1] You surrender your eyelids to the parasite. Black, ink-like tendrils grow out from your gold scar, puncturing your pupils. The world goes pitch black, replaced by a horrifying sonar grid made of pure greed signatures. You can see the exact financial debts and sins of every soul trapped in the underworld. The river parts before you, terrified of the cosmic entity growing inside your mind, but you realize you will never see natural light again.",
+        "name": "The Aurum Worm",
+        "bg": "alley.png",
+        "flash": "#050508",
+        "deltaStat": { "survival": 10, "morality": -25 },
+        "choices": [{ "text": "⏩ Walk blindly across the dried riverbed", "target": "c15_p2_current" }]
+    },
+    "c15_p2_current": {
+        "text": "[PAGE 2] Halfway across the threshold, spectral hands erupt from the boiling sludge. These are the shades of ancient Roman legionnaires and Greek hoplites executed during the early wars of wealth. They do not want to destroy you—they want to drag you down to share their eternal economic captivity. Their hollow eyes reflect the golden glow of your scar. The parasitic entity screams inside your mind, demanding that you crush them beneath your heel.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "choices": [
+            { "text": "🗡️ Brutally stomp their fragile spectral skulls into dust, using their essence to recharge your core", "target": "c15_p3_brutal" },
+            { "text": "🤝 Allow them to sap a fraction of your lingering life force to grant them temporary peace", "target": "c15_p3_hero" }
+        ]
+    },
+    "c15_p3_brutal": {
+        "text": "[PAGE 3] You unleash a localized compression shockwave beneath your feet. The fragile souls are instantly pulverized, their memories and residual energy vacuumed directly into your scar. Your lung stops burning for a split second as the parasite grows fat on their sorrow. Your path alignment is shifting deep into absolute cruelty. The distant tower of Hades begins to tremble at your approach.",
+        "name": "Musa",
+        "bg": "alley.png",
+        "flash": "#800080",
+        "deltaStat": { "survival": 15, "morality": -20 },
+        "choices": [{ "text": "⏩ Climb up the rocky, ash-slicked northern banks", "target": "c15_p4_summit" }]
+    },
+    "c15_p3_hero": {
+        "text": "[PAGE 3] You hold out your bleeding palms, letting the spirits drink your vital essence. They weep as the warm energy briefly eases their centuries of torment, fading peacefully into the dark void. You stagger onto the shoreline, your body dangerously weak and shivering violently, but your heroic alignment blazes like a golden beacon in the dark.",
+        "name": "Narrator",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "deltaStat": { "survival": -20, "morality": 25 },
+        "choices": [{ "text": "⏩ Drag your failing limbs up the rocky northern banks", "target": "c15_p4_summit" }]
+    },
+    "c15_p4_summit": {
+        "text": "[PAGE 4] You reach the peak of the Obsidian Ridge. Ahead lies the Gate of Tartarus, guarded by Midas—the Cursed King of Antiquity. His skin is made of peeling, rusted gold leaf, and his eyes are hollow sockets filled with liquid bullion. He holds a massive scepter wrapped in barbed wire. 'Musa,' Midas wheezes, his voice sounding like grinding gears. 'You think you are a master? You are just the newest cage for the worm.'",
+        "name": "King Midas",
+        "bg": "apartment.png",
+        "choices": [
+            { "text": "⚔️ Direct Combat: Attempt to vaporize Midas using your full raw magic reservoir", "target": "c15_p5_battle" },
+            { "text": "🧠 Psychological: Trick Midas into touching his own core to reverse his curse", "target": "c15_p5_trick" }
+        ]
+    },
+    "c15_p5_battle": {
+        "text": "[PAGE 5] RECKLESS CHOICE CHECK. You charge forward, throwing a massive beam of violet-gold energy. But Midas is completely immune to gold-based attacks; he absorbs your magic effortlessly, his rusted skin glowing bright red. He swings his barbed wire scepter, smashing it directly into your ribs. Your bones splinter, and the direct kinetic trauma drops your survival rating to a critical threshold. You are outmatched in brute force.",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#ff0000",
+        "deltaStat": { "survival": -40, "morality": 0 },
+        "choices": [{ "text": "⏩ Fall back into the shadow crevices to survive", "target": "c15_p6_escape" }]
+    },
+    "c15_p5_trick": {
+        "text": "[PAGE 5] You drop your stance, pretending to collapse in surrender. As Midas steps forward to place his gold-turning hand on your throat, you use a precision kinetic inversion charm. You lock his wrist, forcing his golden fingers to press against his own metallic chest plate. Midas gasps as the inversion loop feeds back into his core, causing his rusted body to fracture and implode into a mountain of worthless dust.",
+        "name": "Musa",
+        "bg": "apartment.png",
+        "flash": "#ffcc00",
+        "deltaStat": { "survival": 5, "morality": 10 },
+        "choices": [{ "text": "⏩ Step through the shattered remains of the gate", "target": "c15_p6_escape" }]
+    },
+    "c15_p6_escape": {
+        "text": "[PAGE 6] The gates crumble. Beyond them lies the Abyssal Factory, where the Neo-Ministry Bank is extracting the raw essence of dead gods to manufacture their planetary control tokens. The air hums with a mechanical, unholy killing rhythm. Preparing long-form database synchronization loops...",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance deep into the Abyssal Factory", "target": "end_of_chapter" }]
+    },
+    "end_of_chapter": {
+        "text": "Chapter 15 baseline narrative metrics successfully committed. Calibrating memory arrays for the next 30-minute block sequence...",
+        "name": "System",
+        "bg": "apartment.png",
+        "choices": [{ "text": "⏩ Advance to Chapter 16", "target": "next_chapter_16" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain of Tartarus.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
