@@ -29,4 +29,28 @@
             { "text": "Plunge the levers down completely to let the light wash the planet clean", "target": "immortal_martyr_ending" }
         ]
     }
-  
+
+        ,
+    "abyssal_tyrant_ending": {
+        "text": "EPILOGUE: You step out onto the high citadel balcony, looking over a silent planet. There are no more wars, no more debts, and no more rebel movements—because every living being has been frozen into a pristine, unmoving solid gold statue. The oceans have settled into a smooth, burning mirror of molten bullion reflecting a dead purple sun. Zeus's lightning rod, Nero's mechanized armor, and Ramses's sun temples have all been melted down into the foundation blocks of your colossal cosmic throne room. You have achieved absolute free will, absolute dominion, and absolute financial ownership of the universe. Yet, as you look across your quiet world museum, you realize the Aurum Worm has left your mind completely alone in an empty void. You sit upon your throne of gold skulls, reigning over an eternal graveyard for the rest of time. [THE RUTHLESS MYTHOLOGICAL TYRANT ENDING REACHED]",
+        "name": "System",
+        "bg": "apartment.png",
+        "flash": "#4b0082",
+        "choices": [{ "text": "🔄 Reset the Cosmic Cycle (Return to Main Menu)", target: "next_chapter_1" }]
+    },
+    "immortal_martyr_ending": {
+        "text": "EPILOGUE: A colossal wave of warm amber light erupts from your chest, washing across the entire globe like a beautiful, silent dawn. The tracking runes burn away completely from the skin of every survivor, and all corporate debts are permanently erased from the memory banks of history. The concept of gold magic and divine parasitic currency evaporates into nothingness, banishing the Roman, Greek, Egyptian, and Norse pantheons back into harmless myths and children's storybooks. Your name is completely wiped from the archives to protect the timeline, leaving you forgotten by the very people you saved. Generations from now, humans will look up at the morning sky and feel a mysterious warmth, never knowing it was paid for by your final heartbeat. You fade peacefully into the light, leaving behind a free, ordinary world. [THE IMMORTAL HUMAN MARTYR ENDING REACHED]",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ffffff",
+        "choices": [{ "text": "🔄 Reset the Cosmic Cycle (Return to Main Menu)", target: "next_chapter_1" }]
+    },
+    "defeat": {
+        "text": "Your survival vitality hits 0%. The golden tracking runes on your skin shatter as your life force fades into the dark rain.",
+        "name": "System",
+        "bg": "alley.png",
+        "flash": "#ff0000",
+        "choices": []
+    }
+}
+
