@@ -11,13 +11,6 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Install Image Processor
-        run: sudo apt-get install -y imagemagick
-
-      - name: Auto-Crop Perfect Square Icon
-        run: |
-          convert apartment.png -resize 512x512^ -gravity center -extent 512x512 icon.png
-
       - name: Build Web App into APK
         uses: darkshredder/web-to-app-action@main
         with:
