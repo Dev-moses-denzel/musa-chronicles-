@@ -1,36 +1,26 @@
-name: Build Android App
-
+name: Build Musa Chronicles APK
 on:
   push:
-    branches: [ "main" ]
-
-permissions:
-  contents: write
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Source Code
-      uses: actions/checkout@v4
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
 
-    - name: Package Web App to APK
-      uses: telerik/progress-apk-builder-action@v1
-      with:
-        source-dir: '.'
-        app-id: 'com.mosesdenzel.musachronicles'
-        app-name: 'Musa Chronicles'
+      - name: Build Web App into APK
+        uses: darkshredder/web-to-app-action@main
+        with:
+          build-folder-path: "."
+          app-name: "MusaChronicles"
+          output-folder-path: "output-apk"
 
-    - name: Create GitHub Release and Upload APK
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v1.0.${{ github.run_number }}
-        name: Release v1.0.${{ github.run_number }}
-        draft: false
-        prerelease: false
-        files: ./**/*.apk
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-        
+      - name: Upload Finished APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Musa-Chronicles-APK
+          path: output-apk/*.apk
+          
