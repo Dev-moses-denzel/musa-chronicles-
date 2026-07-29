@@ -1,7 +1,5 @@
 {
   "name": "Musa Chronicles",
   "fullscreen": true,
-  "orientation": "portrait",
-  "icon": "icon.png",
-  "splash": "apartment.png"
+  "orientation": "portrait"
 }
